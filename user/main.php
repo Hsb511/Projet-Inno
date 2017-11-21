@@ -1,6 +1,13 @@
 <?php
+session_start();
 #structure de base de toute page de l'espace perso d'un user. Elle import d'autre fichiers php pour se remplir
+if(isset($_POST["username"])){
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["password"] = $_POST["password"];
+}
+
 ?>
+
 
 <!DOCTYPE html>
 
@@ -35,7 +42,10 @@
                         include "pad/askForHelp.php"; 
                     }
                 }
-
+                else{
+                    echo "<p>Bienvenue sur votre espace personnel. D'ici, vous pouvez gérer toutes vos intéractions et services liés à proxygeia.</p> <br/>";
+                    echo "<img alt='bienveillance' src='http://www.miramas.org/sites/default/files/aide_au_maintient_a_domicile.jpg'/>";
+                }
 
         ?>
     </body>
