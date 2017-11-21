@@ -1,0 +1,1 @@
+#structure de base de toute page de l'espace perso d'un user. Elle import d'autre fichiers php pour se remplir
