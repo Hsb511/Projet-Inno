@@ -12,10 +12,16 @@
 
 
     <body>
-    fichier proposant la connexion à son espace perso
+    <h1>Connectez vous à votre espace perso</h1>
+    <form action="/checkId.php">
+    Nom d'utilisateur : 
+    <input type="text" name="username"> <br/    >
+    Mot de passe : 
+    <input type="text" name="password"> <br/>
+    
+    <input type="submit" value="Entrer dans mon espace">
 
-
-        
+    </form>
 
     </body>
 
