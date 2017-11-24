@@ -23,9 +23,11 @@ if(isset($_POST["username"])){
 
 
     <body>
-        <?php
-            //affichage du menu
-            include_once "userMenu.php";
+        <?php            
+            //vérification que l'on s'est connecté avec l'un des 3 comptes de démo.
+            if (isset($_POST['username']) && ($_POST['username'] == 'PauletteDubois' || $_POST['username'] == 'Vero45' || $_POST['username'] == 'max38')){
+                            //affichage du menu
+                include_once "userMenu.php";
 
                 //affichage du contenu de la page
 
@@ -54,7 +56,11 @@ if(isset($_POST["username"])){
                 else{
                     echo "<p>Bienvenue sur votre espace personnel. D'ici, vous pouvez gérer toutes vos intéractions et services liés à proxygeia.</p> <br/>";
                     echo "<img alt='bienveillance' src='http://www.miramas.org/sites/default/files/aide_au_maintient_a_domicile.jpg'/>";
-                }
+                }  
+            } 
+            else{
+
+            }
 
         ?>
     </body>
