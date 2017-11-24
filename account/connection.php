@@ -20,15 +20,22 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
             </div>        
         </div>
     </div>
-    <form action="user/main.php" method="post">
-    Nom d'utilisateur : 
-    <input type="text" name="username"> <br/    >
-    Mot de passe : 
-    <input type="password" name="password"> <br/>
-    
-    <input type="submit" value="Entrer dans mon espace">
+        
+            <!-- Contact social -->                                      
+    <div style="text-align: center;">
+        <form action="user/main.php" method="post">
+        Nom d'utilisateur : 
+        <input type="text" name="username"> <br/    >
+        Mot de passe : 
+        <input type="password" name="password"> <br/>
+        
+        <input type="submit" value="Entrer dans mon espace">
 
-    </form>
+        </form>
+    </div>
+                    
+                
+    
 
     <p><u>Comptes de démo :</u> <br/>
         Paulette "PauletteDubois" Dubois <br/>
@@ -36,12 +43,12 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         Maxime "max38" Turtille <br/></p>
 
     <!-- pour réinitialiser la démonstration-->
-    <form action="connection.php" method="get">
+    <form action="index.php" method="get">
         <input type="hidden" name="restartDemo" value="true">
+        <input type="hidden" name="page" value="connection">
         <input type="submit" value="redémarrer la démo">
         
-    </body>
-
+    </form>
 </html>
 
 <?php
