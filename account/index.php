@@ -80,13 +80,9 @@
     </div>
 </div>
 <div class="page-wrapper">    
-    <ul class="slides ">  
-        <li class="slide s-first-visible-section">
-            <div class="waypoint"></div>
-            <div class=" s-bg-overlay  s-section s-signup-section" style=" background-color: transparent; background-image: url(&quot;../Proxygeia_files/1-entourage_et_bien-etre_fkthdg.png&quot;);">
-
-                
-            </div>
+    <ul class="slides ">          
+        <li>
+            <div style="margin-top:80px; margin-bottom:80px;"></div>
         </li>
         <li>
             <?php

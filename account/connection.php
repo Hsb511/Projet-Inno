@@ -4,21 +4,22 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     $_SESSION = array();
 }
 ?>
-<!DOCTYPE html>
 
-<html>
-
-    <head>
-
-        <meta charset="utf-8" />
-
-        <title>Proxygeia - connexion à votre espace perso</title>
-
-    </head>
-
-
-    <body>
-    <h1>Connectez vous à votre espace perso</h1>
+    <div >
+        <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px;">
+            <div class="s-title ">
+                <div class="s-component s-text">
+                    <h2 class="">
+                        <div class="s-component-content needsclick recursive s-font-title"
+                            style="outline: 0px;"   tabindex="0"   role="textbox"
+                            aria-label="false">
+                            <p> Connectez vous à votre espace perso </p>
+                        </div>
+                    </h2>
+                </div>
+            </div>        
+        </div>
+    </div>
     <form action="user/main.php" method="post">
     Nom d'utilisateur : 
     <input type="text" name="username"> <br/    >
