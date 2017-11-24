@@ -2,9 +2,8 @@
 session_start();
 #structure de base de toute page de l'espace perso d'un user. Elle importe d'autre fichiers php pour se remplir
 if(isset($_POST["username"])){
-    foreach($_POST as $key => $value){
-        $_SESSION[$key] = $value;
-    }
+    //stockage du username dans les infos de session
+    $_SESSION["username"] = $_POST["username"];
 }
 
 ?>
