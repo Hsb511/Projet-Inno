@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
+    $_SESSION = array();
+}
 ?>
 <!DOCTYPE html>
 
@@ -29,9 +32,12 @@ session_start();
     <p><u>Comptes de démo :</u> <br/>
         Paulette "PauletteDubois" Dubois <br/>
         Véronique "Vero45" Duval <br/>
-        Maxime "max38" Turtille <br/>
+        Maxime "max38" Turtille <br/></p>
 
-
+    <form action="connection.php" method="get">
+        <input type="hidden" name="restartDemo" value="true">
+        <input type="submit" value="redémarrer la démo">
+        
     </body>
 
 </html>
