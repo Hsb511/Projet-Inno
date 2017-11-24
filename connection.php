@@ -26,6 +26,12 @@ session_start();
 
     </form>
 
+    <p><u>Comptes de démo :</u> <br/>
+        Paulette "PauletteDubois" Dubois <br/>
+        Véronique "Vero45" Duval <br/>
+        Maxime "max38" Turtille <br/>
+
+
     </body>
 
 </html>
