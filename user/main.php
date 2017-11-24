@@ -59,7 +59,8 @@ if(isset($_POST["username"])){
                 }  
             } 
             else{
-
+                //c'est moche de faire ça 
+                echo "<script type='text/javascript'>location.href = '../connection.php';</script>";
             }
 
         ?>
