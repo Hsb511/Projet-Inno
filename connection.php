@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -13,11 +16,11 @@
 
     <body>
     <h1>Connectez vous à votre espace perso</h1>
-    <form action="/checkId.php">
+    <form action="user/main.php" method="post">
     Nom d'utilisateur : 
     <input type="text" name="username"> <br/    >
     Mot de passe : 
-    <input type="text" name="password"> <br/>
+    <input type="password" name="password"> <br/>
     
     <input type="submit" value="Entrer dans mon espace">
 
