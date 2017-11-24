@@ -43,7 +43,7 @@
  
   <body>
  
-    <h1>Geolocalisation et Cartes/h1>
+    <h1>Geolocalisation et Cartes</h1>
     <div id="map"></div>
     <script>
           google.maps.event.addDomListener( window, 'load', initCarte);
