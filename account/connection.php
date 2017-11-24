@@ -4,30 +4,38 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     $_SESSION = array();
 }
 ?>
-<!DOCTYPE html>
 
-<html>
+    <div >
+        <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px;">
+            <div class="s-title ">
+                <div class="s-component s-text">
+                    <h2 class="">
+                        <div class="s-component-content needsclick recursive s-font-title"
+                            style="outline: 0px;"   tabindex="0"   role="textbox"
+                            aria-label="false">
+                            <p> Connectez vous à votre espace perso </p>
+                        </div>
+                    </h2>
+                </div>
+            </div>        
+        </div>
+    </div>
+        
+            <!-- Contact social -->                                      
+    <div style="text-align: center;">
+        <form action="user/main.php" method="post">
+        Nom d'utilisateur : 
+        <input type="text" name="username"> <br/    >
+        Mot de passe : 
+        <input type="password" name="password"> <br/>
+        
+        <input type="submit" value="Entrer dans mon espace">
 
-    <head>
-
-        <meta charset="utf-8" />
-
-        <title>Proxygeia - connexion à votre espace perso</title>
-
-    </head>
-
-
-    <body>
-    <h1>Connectez vous à votre espace perso</h1>
-    <form action="user/main.php" method="post">
-    Nom d'utilisateur : 
-    <input type="text" name="username"> <br/    >
-    Mot de passe : 
-    <input type="password" name="password"> <br/>
+        </form>
+    </div>
+                    
+                
     
-    <input type="submit" value="Entrer dans mon espace">
-
-    </form>
 
     <p><u>Comptes de démo :</u> <br/>
         Paulette "PauletteDubois" Dubois <br/>
@@ -35,12 +43,12 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         Maxime "max38" Turtille <br/></p>
 
     <!-- pour réinitialiser la démonstration-->
-    <form action="connection.php" method="get">
+    <form action="index.php" method="get">
         <input type="hidden" name="restartDemo" value="true">
+        <input type="hidden" name="page" value="connection">
         <input type="submit" value="redémarrer la démo">
         
-    </body>
-
+    </form>
 </html>
 
 <?php
