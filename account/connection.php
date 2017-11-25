@@ -23,13 +23,22 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         
             <!-- Contact social -->                                      
     <div style="text-align: center;">
-        <form action="user/main.php" method="post">
-        Nom d'utilisateur : 
-        <input type="text" name="username"> <br/    >
-        Mot de passe : 
-        <input type="password" name="password"> <br/>
+        <form action="user/main.php" method="post" style="width : 265px; margin : auto;">
+        <div style="width : 265px; padding : 5px; max-width : calc(100% - 12px); margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px; text-align : center;"> Nom d'utilisateur : </div>
+        <input type="text" name="username" style="border-color: 
+        black; background-color :rgba(0, 0, 0, 0.1); border-width :
+         1px; border-style :solid; border-radius : 3px; width : 265px; 
+         padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; max-width : calc(100% - 12px); margin: 4px 0px 4px 0px; line-height: 21px; font-size :16px;"> <br/    >
+        <div style="width : 265px; padding : 5px; max-width : calc(100% - 12px); margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px; text-align : center;"> Mot de passe : </div>
+        <input type="password" name="password" style="border-color: 
+        black; background-color :rgba(0, 0, 0, 0.1); border-width :
+         1px; border-style :solid; border-radius : 3px; width : 265px; 
+         padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; max-width : calc(100% - 12px); margin: 4px 0px 4px 0px; line-height: 21px; font-size :16px;"> <br/>
         
-        <input type="submit" value="Entrer dans mon espace">
+        <input type="submit" value="Entrer dans mon espace" style="border-color: 
+        black; background-color :rgba(0, 0, 0, 0.1); border-width :
+         1px; border-style :solid; border-radius : 3px; width : auto; 
+         padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
 
         </form>
     </div>
