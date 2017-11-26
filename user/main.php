@@ -4,6 +4,9 @@ session_start();
 if(isset($_POST["username"])){
     //stockage du username dans les infos de session
     $_SESSION["username"] = $_POST["username"];
+
+    //chargement de la base de donnée virtuelle dans les informations de session (pour la démo)
+    
 }
 
 ?>
@@ -67,7 +70,7 @@ if(isset($_POST["username"])){
             } 
             else{
                 //c'est moche de faire ça 
-                echo "<script type='text/javascript'>location.href = '../connection.php';</script>";
+                echo "<script type='text/javascript'>location.href = '../account/index.php?page=connection';</script>";
             }
 
         ?>
