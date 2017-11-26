@@ -15,6 +15,16 @@
     <meta name="csrf-token" content="bwTgmMX7SuGqhLDjdkTz0v5rd7JSPs+eFQLtVOpCCldmuMF/cJW4BKAEYbTremNnkMAxZXKOJej+hADXc5PS7Q==">
     <meta name="asset-url" content="https://static-assets.strikinglycdn.com">
     </head>
+<?php
+    if(isset($_GET["page"]) && $_GET["page"]=="connection"){
+        $menu = [["Proxygéia","#proxygeia","../Proxygeia.html"],["Fonctionnalités","#fonctionnalites","../Proxygeia.html"],["Témoignages","#temoignages","../Proxygeia.html"],["Particuliers","#particulier","../Proxygeia.html"],["Contactez-nous","#contact","../Proxygeia.html"]] ; 
+    } 
+    elseif(isset($_GET["zone"]) && $_GET["zone"]=="user"){
+        $menu = [["Demander une aide pour moi","../user/main.php?section=pad&page=askForHelp",""],["              ","",""],["Proposer de l'aide","../user/main.php?section=helper&page=listAnnounces",""],["              ","",""],["Gérer ma famille","../user/main.php?section=familly&page=manageRelatives",""]] ; 
+    } 
+    
+?>
+
 <body class="edit locale-fr product-strikingly s-mouse-enabled" id="sites"> 
 
 <div id="s-content" class="s-variation-default  s-font-heading-default s-font-title-default s-font-body-default " lang="fr">
@@ -46,31 +56,18 @@
                     <div class="nav-container" style="text-align : left;">
                         <ul class="s-nav" style="font-size:23px; text-align :left;">
                             <span style="text-align : left;">
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#proxygeia">
-                                        <span class="s-font-body">Proxygéia</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#fonctionnalites">
-                                        <span class="s-font-body">Fonctionnalités</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#temoignages">
-                                        <span class="s-font-body">Témoignages</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#telechargement">
-                                        <span class="s-font-body">Téléchargez</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#contact">
-                                        <span class="s-font-body">Contactez-nous</span>
-                                    </a>
-                                </li>
+                                <?php 
+                                    foreach($menu as $col => $value)
+                                    {
+                                        echo("
+                                            <li>
+                                                <a class='s-nav-item' href='".$value[2].$value[1]."'>
+                                                    <span class='s-font-body'>".$value[0]."</span>
+                                                </a>
+                                            </li>
+                                        ");
+                                    }
+                                ?>                                
                             </span>
                         </ul>
                     </div>
