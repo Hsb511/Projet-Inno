@@ -18,65 +18,71 @@
 <body class="edit locale-fr product-strikingly s-mouse-enabled" id="sites"> 
 
 <div id="s-content" class="s-variation-default  s-font-heading-default s-font-title-default s-font-body-default " lang="fr">
-    <div class="s-navbar-section">
-        <div class="navigator" id="header-container">
-            <div class="container" style="width:100%;">
-                <div class="columns sixteen" style="width:100%;">
-                    <div class="header-wrapper" style="width:100%;">
-                        <div class="logo-container">
-                        <div class="logo-image">
-                            <div class="s-component s-image">
-                                <span>
-                                    <div class="s-component-content">
-                                        <div>
-                                            <img src="../Proxygeia_files/acax3ilq2tovi0m8k2gw.png" alt="" title="" class="crop-default" data-description="">
-                                        </div>
+<div class="s-navbar-section">
+    <!-- navbar -->
+    <div class="navigator" id="header-container">
+        <div class="columns sixteen" style="margin-left:23px;">
+            <div class="header-wrapper">
+                <div class="logo-container">
+                    <div class="logo-image">
+                        <div class="s-component s-image">
+                            <span>
+                                <div class="s-component-content">
+                                    <div>
+                                        <img src="../Proxygeia_files/logo.png" alt="" title="" class="crop-default" data-description="">
                                     </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="logo-text">
-                            <div class="s-component s-text">
-                                <div class="s-component-content needsclick recursive s-font-title  " style="outline: 0px;"   tabindex="0"   role="textbox" aria-label="false">
-                                    <p>Le bien vieillir à domicile !</p>
                                 </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <div class="s-component s-text">
+                            <div class="s-component-content needsclick recursive s-font-title  " style="outline: 0px;" tabindex="0" role="textbox" aria-label="false">
+                                <p>Le bien vieillir à domicile !</p>
                             </div>
                         </div>
                     </div>
-                    <div class="nav-container" style="text-align : left;">
-                        <ul class="s-nav" style="font-size:23px; text-align :left;">
-                            <span style="text-align : left;">
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#proxygeia">
-                                        <span class="s-font-body">Proxygéia</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#fonctionnalites">
-                                        <span class="s-font-body">Fonctionnalités</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#temoignages">
-                                        <span class="s-font-body">Témoignages</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#telechargement">
-                                        <span class="s-font-body">Téléchargez</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="s-nav-item" href="../Proxygeia.html#contact">
-                                        <span class="s-font-body">Contactez-nous</span>
-                                    </a>
-                                </li>
-                            </span>
-                        </ul>
-                    </div>
+                </div>
+                <div class="nav-container" style="margin:auto; font-size:23px">
+                    <ul class="s-nav">
+                        <span>
+                            <li style="margin:12px">
+                                <a class="s-nav-item" href="#proxygeia">
+                                    <span class="s-font-body">Proxygéia</span>
+                                </a>
+                            </li>
+                            <li style="margin:12px">
+                                <a class="s-nav-item" href="#fonctionnalites">
+                                    <span class="s-font-body">Fonctionnalités</span>
+                                </a>
+                            </li>
+                            <li style="margin:12px">
+                                <a class="s-nav-item" href="#temoignages">
+                                    <span class="s-font-body">Témoignages</span>
+                                </a>
+                            </li>
+                            <li style="margin:12px">
+                                <a class="s-nav-item" href="#particulier">
+                                    <span class="s-font-body">Particuliers</span>
+                                </a>
+                            </li>
+                            <li style="margin:12px">
+                                <a class="s-nav-item" href="#contact">
+                                    <span class="s-font-body">Contactez-nous</span>
+                                </a>
+                            </li>
+                        </span>
+                    </ul>
+                </div>
+                <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px">
+                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" target="_blank">
+                        MON COMPTE
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
     </div>
 </div>
 <div class="page-wrapper">    
