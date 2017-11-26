@@ -47,27 +47,27 @@
                         <ul class="s-nav">
                             <span>
                                 <li>
-                                    <a class="s-nav-item" href="#proxygeia">
+                                    <a class="s-nav-item" href="../Proxygeia.html#proxygeia">
                                         <span class="s-font-body">Proxygéia</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="s-nav-item" href="#fonctionnalites">
+                                    <a class="s-nav-item" href="../Proxygeia.html#fonctionnalites">
                                         <span class="s-font-body">Fonctionnalités</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="s-nav-item" href="#temoignages">
+                                    <a class="s-nav-item" href="../Proxygeia.html#temoignages">
                                         <span class="s-font-body">Témoignages</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="s-nav-item" href="#telechargement">
+                                    <a class="s-nav-item" href="../Proxygeia.html#telechargement">
                                         <span class="s-font-body">Téléchargez</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="s-nav-item" href="#contact">
+                                    <a class="s-nav-item" href="../Proxygeia.html#contact">
                                         <span class="s-font-body">Contactez-nous</span>
                                     </a>
                                 </li>

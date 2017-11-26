@@ -67,7 +67,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         <form action="index.php" method="get">
             <input type="hidden" name="restartDemo" value="true">
             <input type="hidden" name="page" value="connection">
-            <input type="submit" value="redémarrer la démo" style="border-color: 
+            <input type="submit" value="Redémarrer la démo" style="border-color: 
                 black; background-color :rgba(0, 0, 0, 0.1); border-width :
                     1px; border-style :solid; border-radius : 3px; width : auto; 
                     padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
