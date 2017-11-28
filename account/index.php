@@ -31,10 +31,10 @@
 <div class="s-navbar-section">
     <!-- navbar -->
     <div class="navigator" id="header-container">
-        <div class="columns sixteen" style="margin-left:23px;">
+        <div class="columns sixteen">
             <div class="header-wrapper">
-                <div class="logo-container">
-                    <div class="logo-image">
+                <div class="logo-container" style="float:left; margin-left :8px;">
+                    <div class="logo-image"  >
                         <div class="s-component s-image">
                             <span>
                                 <div class="s-component-content">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-container">
+                <div class="nav-container" style="margin: auto;">
                     <ul class="s-nav" style="font-size:23px;">
                         <?php 
                             foreach($menu as $col => $value)
@@ -69,7 +69,7 @@
                         ?>      
                     </ul>
                 </div>
-                <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px; ">
+                <div class="s-button-group ib s-component" style="float:right;  margin-right:8px; ">
                     <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);" target="_blank">
                         MON COMPTE
                     </a>
