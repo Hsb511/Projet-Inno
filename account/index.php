@@ -25,7 +25,7 @@
     
 ?>
 
-<body class="edit locale-fr product-strikingly s-mouse-enabled" id="sites"> 
+<body class="edit locale-fr product-strikingly s-mouse-enabled" style="font-family: lato;" id="sites"> 
 
 
 <div class="s-navbar-section">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="logo-text">
                         <div class="s-component s-text">
-                            <div class="s-component-content needsclick recursive s-font-title  " style="outline: 0px;" tabindex="0" role="textbox" aria-label="false">
+                            <div class="s-component-content needsclick recursive s-font-title  " style="outline: 0px; color:rgb(255, 111, 34);" tabindex="0" role="textbox" aria-label="false">
                                 <p>Le bien vieillir à domicile !</p>
                             </div>
                         </div>
