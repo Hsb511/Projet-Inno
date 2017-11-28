@@ -28,52 +28,58 @@
 <body class="edit locale-fr product-strikingly s-mouse-enabled" id="sites"> 
 
 <div id="s-content" class="s-variation-default  s-font-heading-default s-font-title-default s-font-body-default " lang="fr">
-    <div class="s-navbar-section">
-        <div class="navigator" id="header-container">
-            <div class="container" style="width:100%;">
-                <div class="columns sixteen" style="width:100%;">
-                    <div class="header-wrapper" style="width:100%;">
-                        <div class="logo-container">
-                        <div class="logo-image">
-                            <div class="s-component s-image">
-                                <span>
-                                    <div class="s-component-content">
-                                        <div>
-                                            <img src="../Proxygeia_files/acax3ilq2tovi0m8k2gw.png" alt="" title="" class="crop-default" data-description="">
-                                        </div>
+<div class="s-navbar-section">
+    <!-- navbar -->
+    <div class="navigator" id="header-container">
+        <div class="columns sixteen" style="margin-left:23px;">
+            <div class="header-wrapper">
+                <div class="logo-container">
+                    <div class="logo-image">
+                        <div class="s-component s-image">
+                            <span>
+                                <div class="s-component-content">
+                                    <div>
+                                        <img src="../Proxygeia_files/logo.png" alt="" title="" class="crop-default" data-description="">
                                     </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="logo-text">
-                            <div class="s-component s-text">
-                                <div class="s-component-content needsclick recursive s-font-title  " style="outline: 0px;"   tabindex="0"   role="textbox" aria-label="false">
-                                    <p>Le bien vieillir à domicile !</p>
                                 </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <div class="s-component s-text">
+                            <div class="s-component-content needsclick recursive s-font-title  " style="outline: 0px;" tabindex="0" role="textbox" aria-label="false">
+                                <p>Le bien vieillir à domicile !</p>
                             </div>
                         </div>
                     </div>
-                    <div class="nav-container" style="text-align : left;">
-                        <ul class="s-nav" style="font-size:23px; text-align :left;">
-                            <span style="text-align : left;">
-                                <?php 
-                                    foreach($menu as $col => $value)
-                                    {
-                                        echo("
-                                            <li>
-                                                <a class='s-nav-item' href='".$value[2].$value[1]."'>
-                                                    <span class='s-font-body'>".$value[0]."</span>
-                                                </a>
-                                            </li>
-                                        ");
-                                    }
-                                ?>                                
-                            </span>
-                        </ul>
-                    </div>
+                </div>
+                <div class="nav-container" style="text-align : left;">
+                <ul class="s-nav" style="font-size:23px; text-align :left;">
+                    <span style="text-align : left;">
+                        <?php 
+                            foreach($menu as $col => $value)
+                            {
+                                echo("
+                                    <li>
+                                        <a class='s-nav-item' href='".$value[2].$value[1]."'>
+                                            <span class='s-font-body'>".$value[0]."</span>
+                                        </a>
+                                    </li>
+                                ");
+                            }
+                        ?>                                
+                    </span>
+                </ul>
+                </div>
+                <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px">
+                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" target="_blank">
+                        MON COMPTE
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
     </div>
 </div>
 <div class="page-wrapper">    
