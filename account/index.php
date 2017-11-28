@@ -53,22 +53,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-container" style="text-align : left;">
-                    <ul class="s-nav" style="font-size:23px; text-align :left;">
-                        <span style="text-align : left;">
-                            <?php 
-                                foreach($menu as $col => $value)
-                                {
-                                    echo("
-                                        <li>
-                                            <a class='s-nav-item' href='".$value[2].$value[1]."'>
-                                                <span class='s-font-body'>".$value[0]."</span>
-                                            </a>
-                                        </li>
-                                    ");
-                                }
-                            ?>                                
-                        </span>
+                <div class="nav-container">
+                    <ul class="s-nav" style="font-size:23px;">
+                        <?php 
+                            foreach($menu as $col => $value)
+                            {
+                                echo("
+                                    <li>
+                                        <a class='s-nav-item' href='".$value[2].$value[1]."'>
+                                            <span class='s-font-body'>".$value[0]."</span>
+                                        </a>
+                                    </li>
+                                ");
+                            }
+                        ?>      
                     </ul>
                 </div>
                 <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px; ">
