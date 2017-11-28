@@ -27,7 +27,7 @@
 
 <body class="edit locale-fr product-strikingly s-mouse-enabled" id="sites"> 
 
-<div id="s-content" class="s-variation-default  s-font-heading-default s-font-title-default s-font-body-default " lang="fr">
+
 <div class="s-navbar-section">
     <!-- navbar -->
     <div class="navigator" id="header-container">
@@ -54,32 +54,30 @@
                     </div>
                 </div>
                 <div class="nav-container" style="text-align : left;">
-                <ul class="s-nav" style="font-size:23px; text-align :left;">
-                    <span style="text-align : left;">
-                        <?php 
-                            foreach($menu as $col => $value)
-                            {
-                                echo("
-                                    <li>
-                                        <a class='s-nav-item' href='".$value[2].$value[1]."'>
-                                            <span class='s-font-body'>".$value[0]."</span>
-                                        </a>
-                                    </li>
-                                ");
-                            }
-                        ?>                                
-                    </span>
-                </ul>
+                    <ul class="s-nav" style="font-size:23px; text-align :left;">
+                        <span style="text-align : left;">
+                            <?php 
+                                foreach($menu as $col => $value)
+                                {
+                                    echo("
+                                        <li>
+                                            <a class='s-nav-item' href='".$value[2].$value[1]."'>
+                                                <span class='s-font-body'>".$value[0]."</span>
+                                            </a>
+                                        </li>
+                                    ");
+                                }
+                            ?>                                
+                        </span>
+                    </ul>
                 </div>
-                <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px">
-                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" target="_blank">
+                <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px; ">
+                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);" target="_blank">
                         MON COMPTE
                     </a>
                 </div>
             </div>
         </div>
-    </div>
-</div>
     </div>
 </div>
 <div class="page-wrapper">    

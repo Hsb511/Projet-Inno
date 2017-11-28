@@ -6,7 +6,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
 ?>
 
     <div >
-        <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px;">
+        <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px; color : rgb(255, 111, 34); font-size: 36px; line-height:43.2px;text-align:center;">
             <div class="s-title ">
                 <div class="s-component s-text">
                     <h2 class="">
@@ -22,7 +22,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     </div>
         
             <!-- Contact social -->                                      
-    <div style="text-align: center;">
+    <div style="text-align: center; font-family: lato;">
         <form action="../user/main.php" method="post" style="width : 265px; margin : auto;">
             <div style="width : 265px; padding : 5px; max-width : calc(100% - 12px); margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px; text-align : center;"> Nom d'utilisateur : </div>
             <input type="text" name="username" style="border-color: 
@@ -45,7 +45,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
 </li>
 <li>
     <div >
-        <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px;">
+        <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px; color : rgb(255, 111, 34); font-size: 36px; line-height:43.2px; text-align:center;">
             <div class="s-title ">
                 <div class="s-component s-text">
                     <h2 class="">
