@@ -1,5 +1,27 @@
 <?php
     session_start();
+    #structure de base de toute page de l'espace perso d'un user. Elle importe d'autre fichiers php pour se remplir
+    
+    //le site de démonstration de l'espace personnel a pour but d'exposer les mécanismes qui seront disponibles
+    //il n'a pas pour but d'être optimisé ou sécurisé
+    //Il n'y a pas de persistance. La démo est réinitialisée à chaque nouvelle démo.
+    //Les infos d'une démo sont sauvegardées dans les variables de session.
+    
+    //si l'utilise vient de la page de connexion, son username sera passé en post.
+    if(isset($_POST["username"])){
+        include "user/virtualisedDB/people.php";
+        //vérification que l'utilisateur est enregistré, sinon on redirige vers la page de connexion
+        if (array_key_exists($_POST["username"], $users) == false){
+            echo "<script type='text/javascript'>location.href = 'index.php?page=connection';</script>";
+            print_r($users);
+        }
+        else{echo "coucou";}
+    
+
+        //stockage du username dans les infos de session
+        $_SESSION["username"] = $_POST["username"];
+        //chargement de la base de donnée virtuelle de base dans les informations de session pour cette utilisateur (pour la démo)
+    }
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0048)https://www.strikingly.com/s/sites/11615441/edit -->
@@ -30,45 +52,43 @@
     elseif(isset($_GET["zone"]) && $_GET["zone"] == "user"){
         //Type helper
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
-            $menu = [["Demander une aide pour moi","./user/main.php?section=pad&page=askForHelp",""],
-                    ["              ","",""],
-                    ["Proposer de l'aide","./user/main.php?section=helper&page=listAnnounces",""],
-                    ["              ","",""],
-                    ["Gérer ma famille","./user/main.php?section=familly&page=manageRelatives",""]] ; 
+            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helper&page=homepage",""],
+                    ["Proposer de l'aide","./user/main.php?zone=user&type=helper&page=my-actions",""],
+                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer mes aides","./user/main.php?zone=user&type=helper&page=list-announces",""]] ; 
             //affichage suivant la page
             if(isset($_GET["page"]) && $_GET["page"] == "my-actions"){
-                $menu=[];
+
             }
             elseif(isset($_GET["page"]) && $_GET["page"] == "notifications"){
-                $menu=[];
+             
             }
             //page d'accueil
             else{
-                $menu=[];
+            
             }
         }
 
 
         //Type helped
         if (isset($_GET["type"]) && $_GET["type"] == "helped"){
-            $menu = [["Demander une aide pour moi","./user/main.php?section=pad&page=askForHelp",""],
-                    ["              ","",""],
-                    ["Proposer de l'aide","./user/main.php?section=helper&page=listAnnounces",""],
-                    ["              ","",""],
-                    ["Gérer ma famille","./user/main.php?section=familly&page=manageRelatives",""]] ; 
+            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helped&page=homepage",""],
+                    ["Demander une aide","./user/main.php?zone=user&type=helped&page=search-help",""],
+                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer ma famille","./user/main.php?zone=user&type=helped&age=manage-operations",""]] ; 
 
             //affichage suivant la page
             //page de demande d'aide
             if(isset($_GET["page"]) && $_GET["page"] == "search-help"){
-                $menu=[];
+                
             }
             //page de suivi des opérations
             elseif(isset($_GET["page"]) && $_GET["page"] == "manage-operations"){
-                $menu=[];
+                
             }
             //page d'accueil
             else{
-                $menu=[];
+                
             }
         }
     }

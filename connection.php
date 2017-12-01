@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     $_SESSION = array();
 }
@@ -23,7 +22,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         
             <!-- Contact social -->                                      
     <div style="text-align: center; font-family: lato;">
-        <form action="../user/main.php" method="post" style="width : 265px; margin : auto;">
+        <form action="index.php" method="post" style="width : 265px; margin : auto;">
             <div style="width : 265px; padding : 5px; max-width : calc(100% - 12px); margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px; text-align : center;"> Nom d'utilisateur : </div>
             <input type="text" name="username" style="border-color: 
             black; background-color :rgba(0, 0, 0, 0.1); border-width :
