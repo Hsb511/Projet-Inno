@@ -1,5 +1,27 @@
 <?php
     session_start();
+    #structure de base de toute page de l'espace perso d'un user. Elle importe d'autre fichiers php pour se remplir
+    
+    //le site de démonstration de l'espace personnel a pour but d'exposer les mécanismes qui seront disponibles
+    //il n'a pas pour but d'être optimisé ou sécurisé
+    //Il n'y a pas de persistance. La démo est réinitialisée à chaque nouvelle démo.
+    //Les infos d'une démo sont sauvegardées dans les variables de session.
+    
+    //si l'utilise vient de la page de connexion, son username sera passé en post.
+    if(isset($_POST["username"])){
+        include "user/virtualisedDB/people.php";
+        //vérification que l'utilisateur est enregistré, sinon on redirige vers la page de connexion
+        if (array_key_exists($_POST["username"], $users) == false){
+            echo "<script type='text/javascript'>location.href = 'index.php?page=connection';</script>";
+            print_r($users);
+        }
+        else{echo "coucou";}
+    
+
+        //stockage du username dans les infos de session
+        $_SESSION["username"] = $_POST["username"];
+        //chargement de la base de donnée virtuelle de base dans les informations de session pour cette utilisateur (pour la démo)
+    }
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0048)https://www.strikingly.com/s/sites/11615441/edit -->
@@ -30,45 +52,43 @@
     elseif(isset($_GET["zone"]) && $_GET["zone"] == "user"){
         //Type helper
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
-            $menu = [["Demander une aide pour moi","./user/main.php?section=pad&page=askForHelp",""],
-                    ["              ","",""],
-                    ["Proposer de l'aide","./user/main.php?section=helper&page=listAnnounces",""],
-                    ["              ","",""],
-                    ["Gérer ma famille","./user/main.php?section=familly&page=manageRelatives",""]] ; 
+            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helper&page=homepage",""],
+                    ["Proposer de l'aide","./user/main.php?zone=user&type=helper&page=my-actions",""],
+                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer mes aides","./user/main.php?zone=user&type=helper&page=list-announces",""]] ; 
             //affichage suivant la page
             if(isset($_GET["page"]) && $_GET["page"] == "my-actions"){
-                $menu=[];
+
             }
             elseif(isset($_GET["page"]) && $_GET["page"] == "notifications"){
-                $menu=[];
+             
             }
             //page d'accueil
             else{
-                $menu=[];
+            
             }
         }
 
 
         //Type helped
         if (isset($_GET["type"]) && $_GET["type"] == "helped"){
-            $menu = [["Demander une aide pour moi","./user/main.php?section=pad&page=askForHelp",""],
-                    ["              ","",""],
-                    ["Proposer de l'aide","./user/main.php?section=helper&page=listAnnounces",""],
-                    ["              ","",""],
-                    ["Gérer ma famille","./user/main.php?section=familly&page=manageRelatives",""]] ; 
+            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helped&page=homepage",""],
+                    ["Demander une aide","./user/main.php?zone=user&type=helped&page=search-help",""],
+                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer ma famille","./user/main.php?zone=user&type=helped&age=manage-operations",""]] ; 
 
             //affichage suivant la page
             //page de demande d'aide
             if(isset($_GET["page"]) && $_GET["page"] == "search-help"){
-                $menu=[];
+                
             }
             //page de suivi des opérations
             elseif(isset($_GET["page"]) && $_GET["page"] == "manage-operations"){
-                $menu=[];
+                
             }
             //page d'accueil
             else{
-                $menu=[];
+                
             }
         }
     }
@@ -82,10 +102,10 @@
 <div class="s-navbar-section">
     <!-- navbar -->
     <div class="navigator" id="header-container">
-        <div class="columns sixteen" style="margin-left:23px;">
+        <div class="columns sixteen">
             <div class="header-wrapper">
-                <div class="logo-container">
-                    <div class="logo-image">
+                <div class="logo-container" style="float:left; margin-left :8px;">
+                    <div class="logo-image"  >
                         <div class="s-component s-image">
                             <span>
                                 <div class="s-component-content">
@@ -104,25 +124,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-container" style="text-align : left;">
-                    <ul class="s-nav" style="font-size:23px; text-align :left;">
-                        <span style="text-align : left;">
-                            <?php 
-                                foreach($menu as $col => $value)
-                                {
-                                    echo("
-                                        <li>
-                                            <a class='s-nav-item' href='".$value[2].$value[1]."'>
-                                                <span class='s-font-body'>".$value[0]."</span>
-                                            </a>
-                                        </li>
-                                    ");
-                                }
-                            ?>                                
-                        </span>
+                <div class="nav-container" style="margin: auto;">
+                    <ul class="s-nav" style="font-size:23px;">
+                        <?php 
+                            foreach($menu as $col => $value)
+                            {
+                                echo("
+                                    <li>
+                                        <a class='s-nav-item' href='".$value[2].$value[1]."'>
+                                            <span class='s-font-body'>".$value[0]."</span>
+                                        </a>
+                                    </li>
+                                ");
+                            }
+                        ?>      
                     </ul>
                 </div>
-                <div class="s-button-group ib s-component" style="float:right; margin-left:100px; margin-right:8px; ">
+                <div class="s-button-group ib s-component" style="float:right;  margin-right:8px; ">
                     <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);" target="_blank">
                         MON COMPTE
                     </a>
