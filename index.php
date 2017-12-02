@@ -13,14 +13,11 @@
         //vérification que l'utilisateur est enregistré, sinon on redirige vers la page de connexion
         if (array_key_exists($_POST["username"], $users) == false){
             echo "<script type='text/javascript'>location.href = 'index.php?page=connection';</script>";
-            print_r($users);
         }
-        else{echo "coucou";}
-    
 
-        //stockage du username dans les infos de session
-        $_SESSION["username"] = $_POST["username"];
-        //chargement de la base de donnée virtuelle de base dans les informations de session pour cette utilisateur (pour la démo)
+        else{
+            $_SESSION["username"] = $_POST["username"];
+        }
     }
 ?>
 <!DOCTYPE html>
