@@ -28,7 +28,7 @@
     <title>Compte Proxygeia</title>
 
     <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
-    <link href="./Proxygeia_files/acax3ilq2tovi0m8k2gw.png" rel="shortcut icon" type="image/x-icon">
+    <link href="./Proxygeia_files/logo3.png" rel="shortcut icon" type="image/x-icon">
 
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/editor.8d35e9c6b8cf8126cee9.bundle.css">
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/main_v4_editor.6cf9cd30433bcfb50ea4.bundle.css">
@@ -49,6 +49,21 @@
     elseif(isset($_GET["zone"]) && $_GET["zone"] == "user"){
         //Type helper
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
+<<<<<<< HEAD
+            $menu=[["Ma page","./index.php?zone=user&page=homepage&type=helper",""],
+            ["Mes actions","./index.php?zone=user&page=my_actions&type=helper",""],
+            ["Notifications","./index.php?zone=user&page=notifications&type=helper",""]];
+            //affichage suivant la page
+            if(isset($_GET["page"]) && $_GET["page"] == "my_actions"){
+                $pageToInclude = "./user/helper/my_actions.php";
+            }
+            elseif(isset($_GET["page"]) && $_GET["page"] == "notifications"){
+                $pageToInclude = "./user/helper/notifications.php";
+            }
+            //page d'accueil
+            else{             
+                $pageToInclude = "./user/helper/homepage.php";
+=======
             $menu = [["Tableau de bord","./user/main.php?zone=user&type=helper&page=homepage",""],
                     ["Proposer de l'aide","./user/main.php?zone=user&type=helper&page=my-actions",""],
                     ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
@@ -63,6 +78,7 @@
             //page d'accueil
             else{
             
+>>>>>>> 78549d553324f064fbd867669d667fe5834beccd
             }
         }
 
@@ -89,8 +105,6 @@
             }
         }
     }
-
-    
 ?>
 
 <body class="edit locale-fr product-strikingly s-mouse-enabled" style="font-family: lato;" id="sites"> 
@@ -107,7 +121,7 @@
                             <span>
                                 <div class="s-component-content">
                                     <div>
-                                        <img src="./Proxygeia_files/logo.png" alt="" title="" class="crop-default" data-description="">
+                                        <img src="./Proxygeia_files/logo3.png" alt="" title="" class="crop-default" data-description="">
                                     </div>
                                 </div>
                             </span>
@@ -121,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-container" style="margin: auto;">
+                <div class="nav-container" >
                     <ul class="s-nav" style="font-size:23px;">
                         <?php 
                             foreach($menu as $col => $value)
@@ -137,7 +151,7 @@
                         ?>      
                     </ul>
                 </div>
-                <div class="s-button-group ib s-component" style="float:right;  margin-right:8px; ">
+                <div class="s-button-group ib s-component" style="float:right;  margin-right:8px;margin-left: 23px;">
                     <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);" target="_blank">
                         MON COMPTE
                     </a>
@@ -153,7 +167,7 @@
         </li>
         <li>
             <?php
-            include $pageToInclude;
+                include $pageToInclude;
             ?>
         </li>
     </ul>
