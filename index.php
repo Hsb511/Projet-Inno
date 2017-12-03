@@ -45,7 +45,7 @@
     $pageToInclude = "";
     // contenus des pages relatives au compte
     //page de connexion
-    if(isset($_GET["page"])) {
+    if(isset($_GET["page"]) && ($_GET["page"]=="connection" || $_GET["page"]=="form")) {
         $menu = [["Proxygéia","#proxygeia","./Proxygeia.html"],["Fonctionnalités","#fonctionnalites","./Proxygeia.html"],["Témoignages","#temoignages","./Proxygeia.html"],["Particuliers","#particulier","./Proxygeia.html"],["Contactez-nous","#contact","./Proxygeia.html"]] ; 
         if ($_GET["page"]=="connection") {
            $pageToInclude = "connection.php" ;
