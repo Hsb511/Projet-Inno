@@ -5,7 +5,7 @@
 
 <?php
 //affiche la liste des annonces auquelles l'aidant participe
-//Chaque annonce est formée de tâches régulière ou non à effectuer
+//Chaque annonce est formée de tâches régulières ou non à effectuer
     echo("annonces : <br/>");
     //parcourt la liste des annonces
     foreach($profile["announces"] as $key => $id){
@@ -16,7 +16,7 @@
                     <th> type de taĉhe  </th>
                     <th>commentaire  </th>
                 </tr>";
-        //parcourt la liste des tâche de l'annonce
+        //parcourt la liste des tâches de l'annonce
         foreach($announce["tasks"] as $id => $taskID){    
             echo ("
             <tr>
