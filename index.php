@@ -49,7 +49,7 @@
         $menu = [["Proxygéia","#proxygeia","./Proxygeia.html"],["Fonctionnalités","#fonctionnalites","./Proxygeia.html"],["Témoignages","#temoignages","./Proxygeia.html"],["Particuliers","#particulier","./Proxygeia.html"],["Contactez-nous","#contact","./Proxygeia.html"]] ; 
         if ($_GET["page"]=="connection") {
            $pageToInclude = "connection.php" ;
-        } elseif ($_GET["page"]=="connection") {
+        } elseif ($_GET["page"]=="form") {
             $pageToInclude = "form/form.php";
         }
     }
