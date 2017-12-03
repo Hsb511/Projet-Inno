@@ -4,7 +4,7 @@
     <!-- Ligne pour le prénom : input -->
     <tr> 
         <td> Prénom </td>
-        <td> <?php echo("<input type='text' name='prenom' value=''>"); ?> </td>
+        <td> <?php echo("<input type='text' name='prenom' value='".$default['prenom']."'>"); ?> </td>
     </tr> 
     <!-- Ligne pour le nom : input -->
     <tr>
