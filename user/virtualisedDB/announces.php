@@ -6,6 +6,7 @@ $announces = array(
                     "tasks" => array("1","2"), 
                     "description" => "rendez-visite à ma mère une fois par semaine et tenez-moi informé de son état",
                     "frequency" => 1,
+                    "days" => array(0 => "jeudi"),
                     "duration" => 2,
                     "helper" => "2",
                     "helped" => "0",
@@ -13,8 +14,8 @@ $announces = array(
 );
 
 $tasks = array(
-    "1" => array("comment" => "ma grand-mère aime bien jouer au scrabble", "task_type" => 5, "repeat"=>"yes"),
-    "2" => array("comment" => "achetez du riz et 2 escalopes de veau", "task_type" => 0, "repeat"=>"no"),
+    "1" => array("comment" => "ma grand-mère aime bien jouer au scrabble", "task_type" => 5, "repeat"=>"1"),
+    "2" => array("comment" => "achetez du riz et 2 escalopes de veau", "task_type" => 0, "repeat"=>"0"),
 );
 
 $task_types = array(

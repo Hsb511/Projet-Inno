@@ -100,8 +100,6 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         $_SESSION["announces"] = $announces;
         $_SESSION["tasks"] = $tasks;
         $_SESSION["task_types"] = $task_types;
-        print_r($profiles);
-        print_r($users);
     }
 
 ?>
