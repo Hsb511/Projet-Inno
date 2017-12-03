@@ -96,6 +96,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
         //copie dans les variables de session
         $_SESSION["profiles"] = $profiles;
         $_SESSION["users"] = $users;
+        $_SESSION["announces"] = $announces;
         print_r($profiles);
         print_r($users);
     }

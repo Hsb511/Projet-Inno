@@ -58,7 +58,7 @@
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
             $menu = [["Tableau de bord","./index.php?zone=user&type=helper&page=homepage",""],
                     ["Proposer de l'aide","./index.php?zone=user&type=helper&page=my-actions",""],
-                    ["mes messages","./index.php?zone=user&type=helper&page=notifications",""],
+                    ["Mes messages","./index.php?zone=user&type=helper&page=notifications",""],
                     ["Gérer mes aides","./index.php?zone=user&type=helper&page=list-announces",""],
                     ["Déconnexion","./index.php?page=connection",""]] ;  
             //affichage suivant la page
@@ -67,6 +67,9 @@
             }
             elseif(isset($_GET["page"]) && $_GET["page"] == "notifications"){
                 $pageToInclude = "./user/helper/notifications.php";                
+            }
+            elseif(isset($_GET["page"]) && $_GET["page"] == "list-announces"){
+                $pageToInclude = "./user/helper/listAnnounces.php";                
             }
             //page d'accueil
             else{
@@ -79,8 +82,8 @@
         if (isset($_GET["type"]) && $_GET["type"] == "helped"){
             $menu = [["Tableau de bord","./index.php?zone=user&type=helped&page=homepage",""],
                     ["Demander une aide","./index.php?zone=user&type=helped&page=search-help",""],
-                    ["mes messages","./index.php?zone=user&type=helper&page=notifications",""],
-                    ["Gérer ma famille","./index/main.php?zone=user&type=helped&age=manage-operations",""],
+                    ["mes messages","./index.php?zone=user&type=helped&page=notifications",""],
+                    ["Gérer ma famille","./index.php?zone=user&type=helped&age=manage-operations",""],
                     ["Déconnexion","./index.php?page=connection",""]] ; 
             //affichage suivant la page
             //page de demande d'aide
