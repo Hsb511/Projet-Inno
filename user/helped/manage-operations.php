@@ -2,8 +2,6 @@
     //si on arrive sur cette page en ayant rempli une demande de nouvelle tâche.
     if(isset($_GET["addTask"])){
         //assignation d'un id de tâche
-        echo "<br/><br/>";
-        print_r($_POST);
         $newTaskID = count($_SESSION["tasks"])+1;
         
         //creation de la tâche
@@ -12,13 +10,7 @@
         
         //ajout de la nouvelle tâche à l'annonce
         array_push($_SESSION["announces"][$_POST["announceID"]]["tasks"], $newTaskID);
-        echo "<br/>";
-        print_r($_SESSION["tasks"]);
-        echo "<br/>";
-        echo "<br/>";
-        print_r($_SESSION["announces"]);
-        echo "<br/>";
-        echo "<br/>";
+
     }
 ?>
 
@@ -32,7 +24,7 @@
 <h1> Liste de vos annonces </h1>
 
 <?php
-//affiche la liste des annonces auquelles l'aidant participe
+//affiche la liste des annonces de demande d'aide postées par l'utilisateur
 //Chaque annonce est formée de tâches régulières ou non à effectuer
     echo("annonces : <br/>");
     //parcourt la liste des annonces
