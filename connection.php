@@ -92,11 +92,14 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     function fillBaseBD(){
         //importation de la DB
         include "user/virtualisedDB/people.php";
+        include "user/virtualisedDB/announces.php";
 
         //copie dans les variables de session
         $_SESSION["profiles"] = $profiles;
         $_SESSION["users"] = $users;
         $_SESSION["announces"] = $announces;
+        $_SESSION["tasks"] = $tasks;
+        $_SESSION["task_types"] = $task_types;
         print_r($profiles);
         print_r($users);
     }

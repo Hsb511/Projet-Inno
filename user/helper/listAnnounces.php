@@ -1,21 +1,29 @@
-liste les annonces d'aide postée sur le site par l'utilisateur. propose d'en rajouter ou d'en modifier.
-
-<p> Liste de vos annonces </p>
-<a class='text-menu'>-I need my tomato!</a><br/>
-<a class='text-menu'>-Where the hell is my toothbrush</a>;
+<!--liste les annonces d'aide postée sur le site par l'utilisateur. propose d'en rajouter ou d'en modifier. -->
+<br/>
+<br/>
+<h1> Liste de vos annonces </h1>
 
 <?php
-    echo("<table>
-            <tr>
-                <td> Titre  </td><td>description  </td><td>date  </td>");
+//affiche la liste des annonces auquelles l'aidant participe
+//Chaque annonce est formée de tâches régulière ou non à effectuer
+    echo("annonces : <br/>");
+    //parcourt la liste des annonces
     foreach($profile["announces"] as $key => $id){
         $announce = $_SESSION["announces"][$id];
-        echo ("
+        echo "<b>nom : </b>".$announce["title"]."<br/><b>description :</b> ".$announce["description"]."<br/>";
+        echo "<table>
+                <tr>
+                    <th> type de taĉhe  </th>
+                    <th>commentaire  </th>
+                </tr>";
+        //parcourt la liste des tâche de l'annonce
+        foreach($announce["tasks"] as $id => $taskID){    
+            echo ("
             <tr>
-                <td>".$announce["title"]."</td>
-                <td>".$announce["description"]."</td>
-                <td>".$announce["date"]."</td>
+                <td>".$_SESSION["task_types"][$taskID]."</td>
+                <td>".$_SESSION["tasks"][$taskID]["comment"]."</td>
             </tr>");
     }
-    echo("</table>");
+    echo "</table><br/><br/>";
+}
 ?>
