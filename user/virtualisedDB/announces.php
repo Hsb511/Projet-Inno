@@ -6,6 +6,7 @@ $announces = array(
                     "tasks" => array("1","2"), 
                     "description" => "rendez-visite à ma mère une fois par semaine et tenez-moi informé de son état",
                     "frequency" => 1,
+                    "days" => array(0 => "jeudi"),
                     "duration" => 2,
                     "helper" => "2",
                     "helped" => "0",

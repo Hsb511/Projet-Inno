@@ -1,4 +1,11 @@
-
+<?php
+/*
+Guillaume : 
+Sur cette page je verrais bien un questionnaire qui demande l'âge de la vieille personne, l'adresse, la fréquence de visites, les services recherchés
+Puis on valide et le site indique s'il y a des aidants disponibles pour le service recherché (et si oui combien).
+Puis il demande de créer le compte avec la demande d'aide préremplie
+*/
+?>
 <form method = "post" action='index.php?page=admin&tool=addUser'>
 <table id="table">
     <!-- Ligne pour le prénom : input -->
