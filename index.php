@@ -14,10 +14,14 @@
         if (array_key_exists($_POST["username"], $users) == false){
             echo "<script type='text/javascript'>location.href = 'index.php?page=connection';</script>";
         }
-
+        //on redirige vers la bonne page d'acceuil
         else{
             $_SESSION["username"] = $_POST["username"];
+            //on cherche le type d'utilisateur de ce compte
+            $type = $profiles[ $users[ $_POST["username"] ]["profileID"] ]["type"];
+            echo "<script type='text/javascript'>location.href = 'index.php?zone=user&type=$type&page=homepage';</script>";
         }
+        exit(); //ça évite de générer le reste
     }
 ?>
 <!DOCTYPE html>
@@ -47,12 +51,16 @@
     }
     //Zone user
     elseif(isset($_GET["zone"]) && $_GET["zone"] == "user"){
+        //définition d'une variable bien pratique pour générer les pages
+        $profile = $_SESSION["profiles"][  $_SESSION["users"][$_SESSION["username"]]["profileID"]   ];
+
         //Type helper
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
-            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helper&page=homepage",""],
-                    ["Proposer de l'aide","./user/main.php?zone=user&type=helper&page=my-actions",""],
-                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
-                    ["Gérer mes aides","./user/main.php?zone=user&type=helper&page=list-announces",""]] ; 
+            $menu = [["Tableau de bord","./index.php?zone=user&type=helper&page=homepage",""],
+                    ["Proposer de l'aide","./index.php?zone=user&type=helper&page=my-actions",""],
+                    ["mes messages","./index.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer mes aides","./index.php?zone=user&type=helper&page=list-announces",""],
+                    ["Déconnexion","./index.php?page=connection",""]] ;  
             //affichage suivant la page
             if(isset($_GET["page"]) && $_GET["page"] == "my-actions"){
                 $pageToInclude = "./user/helper/my_actions.php";
@@ -69,11 +77,11 @@
 
         //Type helped
         if (isset($_GET["type"]) && $_GET["type"] == "helped"){
-            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helped&page=homepage",""],
-                    ["Demander une aide","./user/main.php?zone=user&type=helped&page=search-help",""],
-                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
-                    ["Gérer ma famille","./user/main.php?zone=user&type=helped&age=manage-operations",""]] ; 
-
+            $menu = [["Tableau de bord","./index.php?zone=user&type=helped&page=homepage",""],
+                    ["Demander une aide","./index.php?zone=user&type=helped&page=search-help",""],
+                    ["mes messages","./index.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer ma famille","./index/main.php?zone=user&type=helped&age=manage-operations",""],
+                    ["Déconnexion","./index.php?page=connection",""]] ; 
             //affichage suivant la page
             //page de demande d'aide
             if(isset($_GET["page"]) && $_GET["page"] == "search-help"){
