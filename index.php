@@ -45,7 +45,11 @@
     $pageToInclude = "";
     // contenus des pages relatives au compte
     //page de connexion
+<<<<<<< HEAD
     if(isset($_GET["page"]) && ($_GET["page"]=="connection" || $_GET["page"]=="form")) {
+=======
+    if(isset($_GET["page"]) && ($_GET["page"] == "connection" || $_GET["page"] == "form")) {
+>>>>>>> 5aca0d14e73b7af38fa65a43f88cc6e584b2d61a
         $menu = [["Proxygéia","#proxygeia","./Proxygeia.html"],["Fonctionnalités","#fonctionnalites","./Proxygeia.html"],["Témoignages","#temoignages","./Proxygeia.html"],["Particuliers","#particulier","./Proxygeia.html"],["Contactez-nous","#contact","./Proxygeia.html"]] ; 
         if ($_GET["page"]=="connection") {
            $pageToInclude = "connection.php" ;
@@ -87,7 +91,7 @@
             $menu = [["Tableau de bord","./index.php?zone=user&type=helped&page=homepage",""],
                     ["Demander une aide","./index.php?zone=user&type=helped&page=search-help",""],
                     ["mes messages","./index.php?zone=user&type=helped&page=notifications",""],
-                    ["Gérer ma famille","./index.php?zone=user&type=helped&age=manage-operations",""],
+                    ["Gérer ma famille","./index.php?zone=user&type=helped&page=manage-operations",""],
                     ["Déconnexion","./index.php?page=connection",""]] ; 
             //affichage suivant la page
             //page de demande d'aide
@@ -96,7 +100,11 @@
             }
             //page de suivi des opérations
             elseif(isset($_GET["page"]) && $_GET["page"] == "manage-operations"){
-                
+                $pageToInclude = "./user/helped/manage-operations.php";
+            }
+            //page de suivi de nouvelle demande d'aide
+            elseif(isset($_GET["page"]) && $_GET["page"] == "new-help"){
+                $pageToInclude = "./user/helped/new-help.php";
             }
             //page d'accueil
             else{
