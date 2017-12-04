@@ -1,4 +1,14 @@
 <?php
+    //Valeurs par défaut
+    $default= ['lien'=>"",'age'=>""];
+    
+    //On parcourt les infos et on regarde celle qui sont déjà remplies et correctes 
+    foreach($default as $info => $value) {
+        if(!empty($_POST[$info])) {
+            //On les passe comme valeurs par défaut
+            $default[$info] = $_POST[$info];
+        }    
+    }
 /*
 Guillaume : 
 Sur cette page je verrais bien un questionnaire qui demande l'âge de la vieille personne, l'adresse, la fréquence de visites, les services recherchés
@@ -6,73 +16,114 @@ Puis on valide et le site indique s'il y a des aidants disponibles pour le servi
 Puis il demande de créer le compte avec la demande d'aide préremplie
 */
 ?>
+<div class="s-bg-image s-bg-light-text s-bg-overlay s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux_flous.png&quot;);">
+    <div class="s-rva-text sixteen columns">
+            <div class="s-title-group  ">
+                <div class="s-subtitle">
+                    <div class="s-component s-text">
+                        <h4 class="">
+                            <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:28px;"   tabindex="0"   role="textbox" aria-label="false">
+                                <p><strong>Grâce aux réponses de ce formulaire, nous pourrons</strong></p>
+                                <p><strong>trouver l'offre qui vous correspond le mieux</strong></p>
+                            </div>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="s-title ">
+                    <div class="s-component s-text">
+                        <h1 style="font-size:42px"> 
+                            <div class="s-component-content s-font-title" style="outline: 0px; color:rgb(255,111,34);" tabindex="0" role="textbox" aria-label="false">
+                                <p>OU</p>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+                <div class="s-subtitle">
+                    <div class="s-component s-text">
+                        <h4 class="">
+                            <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:28px;"   tabindex="0"   role="textbox" aria-label="false">
+                                <p><strong>Consultez directement nos offres ici</strong></p>
+                            </div>
+                        </h4>
+                    </div>
+                </div>
+                <div class="s-button-group ib s-component">
+                    <a  class="s-common-button s-font-body s-action-button" 
+                        href="index.php?page=form"
+                        target="_blank" 
+                        style="text-transform:uppercase">
+                        Nos offres
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+td {
+    padding:8px 32px;
+}
+select {
+    font-size:32px;
+    font-family:lato;
+}
+input {
+    border:visible;
+}
+#title{
+    font-size:56px;
+    margin-top:60px;
+    color:rgb(255,111,34);
+    text-align:center;
+}
+#table {
+    margin:16px auto;
+    font-size: 32px;
+}
+</style>
+<h1 id="title"> 
+    Formulaire
+</h1>
+
 <form method = "post" action='index.php?page=admin&tool=addUser'>
 <table id="table">
-    <!-- Ligne pour le prénom : input -->
+    <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr> 
-        <td> Prénom </td>
-        <td> <?php echo("<input type='text' name='prenom' value='".$default['prenom']."'>"); ?> </td>
+        <td> Pour qui cherchez vous de l'aide ? </td>
+        <td><select id="lien"> 
+            <?php
+            if ($default['lien'] == 'pour un.e ami.e') {
+                echo("<option value='pour un parent'>pour un parent</option>
+                      <option value='pour un.e ami.e' selected>pour un.e ami.e</option>
+                      <option value='pour moi'>pour moi</option>
+                      <option value='autre'>autre</option>");
+            } elseif ($default['lien'] == 'pour moi') {
+                echo("<option value='pour un parent'>pour un parent</option>
+                      <option value='pour un.e ami.e'>pour un.e ami.e</option>
+                      <option value='pour moi' selected>pour moi</option>
+                      <option value='autre'>autre</option>");
+            } elseif ($default['lien'] == 'autre') {
+                echo("<option value='pour un parent'>pour un parent</option>
+                        <option value='pour un.e ami.e'>pour un.e ami.e</option>
+                        <option value='pour moi'>pour moi</option>
+                        <option value='autre' selected>autre</option>");
+            } else {
+                echo("<option value='pour un parent' selected>pour un parent</option>
+                      <option value='pour un.e ami.e'>pour un.e ami.e</option>
+                      <option value='pour moi'>pour moi</option>
+                      <option value='autre'>autre</option>");
+            }
+            ?>
+ 	    </select> </td>
     </tr> 
     <!-- Ligne pour le nom : input -->
     <tr>
-        <td> Nom </td> 
-        <td> <?php echo("<input type='text' name='nom' value='".$default['nom']."'>"); ?>  </td>
-    </tr>
-    <!-- Ligne pour le sexe : select -->
-    <tr>
-        <td> Sexe </td>
-        <td> <select name="sexe"> 
-            <?php
-            if ($default['sexe'] == 'Homme') {
-                echo("<option value='Femme'>Femme</option>
-                      <option value='Homme' selected>Homme</option>");
-            } else {
-                echo("<option value='Femme' selected>Femme</option>
-                      <option value='Homme'>Homme</option>");
-            }
-            ?>
- 	    </select>  </td>
-    </tr> 
-    <!-- Ligne pour la date de naissance input date -->
-    <tr>
-        <td> Date de naissance </td>
-        <td> <?php echo("<input type='date' name='date_naissance' value='".$default['date_naissance']."'>"); ?>  </td>
-    </tr>
-    <!-- Ligne pour la catégorie : select (avec les options de la BDD) -->
-    <tr>
-        <td> Catégorie (Etudiant, Enseignant...) </td>
-        <td> <select name="categorie"/>
-            <?php 
-                // On se connecte à la BDD et on recherche les différentes catégorie
-                include("db_modifications/connectionToDB.php");
-                $req="SELECT titre FROM Categorie;";
-                $res=$pdo->query($req);
-                $res=$res->fetchAll();
-                $default_cat = "";
-                //Pour chaque catégorie
-                foreach($res as $id => $cat) {
-                    //On affiche la catégorie correspondante de la BDD dans le forme
-                    if($cat['0'] == $default['categorie']) {
-                        $default_cat = "selected";
-                    }
-                    echo("<option value='".$cat['0']."'"." $default_cat> ".$cat['0']." </option>");
-                }
-            ?> 
-        
-        </select> </td>
-    </tr> 
-    <!-- Ligne pour le mail -->
-    <tr>
-        <td> mail </td>
-        <td><?php echo("<input type='text' name='mail' value='".$default['mail']."'>"); ?> </td>
-    </tr>
-    <!-- Ligne pour la page perso -->
-    <tr>
-        <td> URL de la page perso </td>
-        <td> <?php echo("<input type='text' name='page_perso' value='".$default['page_perso']."'>"); ?>  </td>
+        <td> Quel âge à cette personne ? </td> 
+        <td> <?php echo("<input type='text' name='nom' value='".$default['age']."'>"); ?>  </td>
     </tr>
 </table>
-<input type="file" name="photo" id="photo" />
 <input type="submit" name="submit" value="Valider" class="center">
 <input type="reset" name="Reset" value="Annuler">
 </form>

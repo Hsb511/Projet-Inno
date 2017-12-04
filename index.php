@@ -33,9 +33,10 @@
 
     <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
     <link href="./Proxygeia_files/logo3.png" rel="shortcut icon" type="image/x-icon">
-
+    
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/editor.8d35e9c6b8cf8126cee9.bundle.css">
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/main_v4_editor.6cf9cd30433bcfb50ea4.bundle.css">
+    <link rel="stylesheet" type="text/css" href="./form/stylesheet.css">
 
     <meta name="csrf-param"s-navbar-section content="authenticity_token">
     <meta name="csrf-token" content="bwTgmMX7SuGqhLDjdkTz0v5rd7JSPs+eFQLtVOpCCldmuMF/cJW4BKAEYbTremNnkMAxZXKOJej+hADXc5PS7Q==">
