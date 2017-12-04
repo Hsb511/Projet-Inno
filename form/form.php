@@ -125,6 +125,17 @@ input {
 .s-common-button {
     background-color:rgb(255,111,34);
 }
+
+.form{
+    border-color: black; 
+    background-color :rgba(0, 0, 0, 0.1); 
+    border-width :1px; 
+    border-style :solid; 
+    border-radius : 3px; 
+    padding : 5px; 
+    box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
+    margin: 4px 0px 4px 0px; 
+}
 </style>
 <h1 id="title"> 
     Formulaire
@@ -135,7 +146,7 @@ input {
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr> 
         <td><b>Pour qui</b> cherchez vous de l'aide ? </td>
-        <td><select id="lien"> 
+        <td><select id="lien" class="form"> 
             <?php
             if ($default['lien'] == 'pour un.e ami.e') {
                 echo("<option value='pour un parent'>pour un parent</option>
@@ -164,7 +175,7 @@ input {
     <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
         <td> <b>Quel âge</b> à cette personne ? </td> 
-        <td> <?php echo("<input type='text' name='nom' value='".$default['age']."'>"); ?>  </td>
+        <td> <?php echo("<input type='text' name='nom' class='form' value='".$default['age']."'>"); ?>  </td>
     </tr>
     <!-- Lignes pour l'adresse de la personne : imput -->
     <tr>
@@ -173,11 +184,11 @@ input {
     </tr>
     <tr >
         <td class="sub-tr"> Code postal / Ville </td>
-        <td> <?php echo("<input type='text' name='nom' value='".$default['city']."'>"); ?> </td>
+        <td> <?php echo("<input type='text' class='form' name='nom' value='".$default['city']."'>"); ?> </td>
     </tr>
     <tr >
         <td class="sub-tr"> Adresse </td>
-        <td> <?php echo("<input type='text' name='nom' value='".$default['street']."'>"); ?> </td>
+        <td> <?php echo("<input type='text' class='form' name='nom' value='".$default['street']."'>"); ?> </td>
     </tr>
 </table>
 <div id="button">
