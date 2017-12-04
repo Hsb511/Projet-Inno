@@ -52,7 +52,6 @@
     elseif(isset($_GET["zone"]) && $_GET["zone"] == "user"){
         //Type helper
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
-<<<<<<< HEAD
             $menu=[["Ma page","./index.php?zone=user&page=homepage&type=helper",""],
             ["Mes actions","./index.php?zone=user&page=my_actions&type=helper",""],
             ["Notifications","./index.php?zone=user&page=notifications&type=helper",""]];
@@ -66,22 +65,6 @@
             //page d'accueil
             else{             
                 $pageToInclude = "./user/helper/homepage.php";
-=======
-            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helper&page=homepage",""],
-                    ["Proposer de l'aide","./user/main.php?zone=user&type=helper&page=my-actions",""],
-                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
-                    ["Gérer mes aides","./user/main.php?zone=user&type=helper&page=list-announces",""]] ; 
-            //affichage suivant la page
-            if(isset($_GET["page"]) && $_GET["page"] == "my-actions"){
-
-            }
-            elseif(isset($_GET["page"]) && $_GET["page"] == "notifications"){
-             
-            }
-            //page d'accueil
-            else{
-            
->>>>>>> 78549d553324f064fbd867669d667fe5834beccd
             }
         }
 
