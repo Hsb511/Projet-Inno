@@ -92,8 +92,10 @@ td {
 select, input {
     width: 80%;
     background-color:lightgrey;
+    padding: 5px;
 }
 select {
+    width:83%;
     font-size:32px;
     font-family: Lato;
 }
@@ -132,7 +134,6 @@ input {
     border-width :1px; 
     border-style :solid; 
     border-radius : 3px; 
-    padding : 5px; 
     box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
     margin: 4px 0px 4px 0px; 
 }
