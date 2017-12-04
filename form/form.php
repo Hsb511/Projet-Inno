@@ -1,6 +1,6 @@
 <?php
     //Valeurs par défaut
-    $default= ['lien'=>"",'age'=>""];
+    $default= ['lien'=>"",'age'=>"",'city'=>"", 'street'=>""];
     
     //On parcourt les infos et on regarde celle qui sont déjà remplies et correctes 
     foreach($default as $info => $value) {
@@ -42,7 +42,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
                 <div class="s-subtitle">
                     <div class="s-component s-text">
                         <h4 class="">
-                            <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:28px;"   tabindex="0"   role="textbox" aria-label="false">
+                            <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:28px; margin-bottom:16px"   tabindex="0"   role="textbox" aria-label="false">
                                 <p><strong>Consultez directement nos offres ici</strong></p>
                             </div>
                         </h4>
@@ -62,36 +62,72 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
 </div>
 
 <style>
-td {
-    padding:8px 32px;
-}
-select {
-    font-size:32px;
-    font-family:lato;
-}
-input {
-    border:visible;
-}
+/*/Title styles/*/
 #title{
     font-size:56px;
     margin-top:60px;
     color:rgb(255,111,34);
     text-align:center;
 }
+
+/*/Table styles /*/
 #table {
     margin:16px auto;
     font-size: 32px;
+}
+
+td {
+    padding:8px 32px;
+}
+.sub-tr{
+    text-align:right;
+    font-size:23px;
+    padding:0px;
+}
+
+/*/ input / select styles /*/
+select, input {
+    width: 80%;
+}
+select {
+    font-size:32px;
+    font-family: Lato;
+}
+input {
+    border:visible;
+    border-color:black;
+    border-width:1px;
+    border-style:visible;
+}
+/*/ button styles /*/
+#button {
+    margin-top:32px;
+    margin-bottom:80px;
+}
+#submit, #reset {
+    width: 20%;
+    padding: 16px;
+    margin-bottom:60px;
+    font-size:32px;
+}
+#submit {
+    float:left;
+    margin-left:23%;
+}
+#reset{
+    float:right;
+    margin-right:23%;
 }
 </style>
 <h1 id="title"> 
     Formulaire
 </h1>
 
-<form method = "post" action='index.php?page=admin&tool=addUser'>
+<form method = "post" action='index.php?page=offre'>
 <table id="table">
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr> 
-        <td> Pour qui cherchez vous de l'aide ? </td>
+        <td><b>Pour qui</b> cherchez vous de l'aide ? </td>
         <td><select id="lien"> 
             <?php
             if ($default['lien'] == 'pour un.e ami.e') {
@@ -118,12 +154,27 @@ input {
             ?>
  	    </select> </td>
     </tr> 
-    <!-- Ligne pour le nom : input -->
+    <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
-        <td> Quel âge à cette personne ? </td> 
+        <td> <b>Quel âge</b> à cette personne ? </td> 
         <td> <?php echo("<input type='text' name='nom' value='".$default['age']."'>"); ?>  </td>
     </tr>
+    <!-- Lignes pour l'adresse de la personne : imput -->
+    <tr>
+        <td> A quelle <b>adresse</b> habite-elle ? </td> 
+        <td>  </td>
+    </tr>
+    <tr >
+        <td class="sub-tr"> Code postal / Ville </td>
+        <td> <?php echo("<input type='text' name='nom' value='".$default['city']."'>"); ?> </td>
+    </tr>
+    <tr >
+        <td class="sub-tr"> Adresse </td>
+        <td> <?php echo("<input type='text' name='nom' value='".$default['street']."'>"); ?> </td>
+    </tr>
 </table>
-<input type="submit" name="submit" value="Valider" class="center">
-<input type="reset" name="Reset" value="Annuler">
+<div id="button">
+    <input type="submit" name="submit" value="Valider" id="submit"  class="s-common-button s-font-body s-action-button" >
+    <input type="reset" name="Reset" value="Annuler" id="reset"  class="s-common-button s-font-body s-action-button" >
+</div>
 </form>
