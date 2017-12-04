@@ -23,8 +23,8 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
                     <div class="s-component s-text">
                         <h4 class="">
                             <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:28px;"   tabindex="0"   role="textbox" aria-label="false">
-                                <p><strong>Grâce aux réponses de ce formulaire, nous pourrons</strong></p>
-                                <p><strong>trouver l'offre qui vous correspond le mieux</strong></p>
+                                <p><b>Grâce aux réponses de ce <strong>formulaire</strong>, nous pourrons</b></p>
+                                <p><b>trouver l'offre qui vous correspond le mieux</b></p>
                             </div>
                         </h4>
                     </div>
@@ -34,7 +34,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
                     <div class="s-component s-text">
                         <h1 style="font-size:42px"> 
                             <div class="s-component-content s-font-title" style="outline: 0px; color:rgb(255,111,34);" tabindex="0" role="textbox" aria-label="false">
-                                <p>OU</p>
+                                <p><b>OU</b></p>
                             </div>
                         </h1>
                     </div>
@@ -43,7 +43,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
                     <div class="s-component s-text">
                         <h4 class="">
                             <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:28px; margin-bottom:16px"   tabindex="0"   role="textbox" aria-label="false">
-                                <p><strong>Consultez directement nos offres ici</strong></p>
+                                <p><b>Vous pouvez consulter directement nos offres ici</b></p>
                             </div>
                         </h4>
                     </div>
@@ -68,6 +68,9 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
     margin-top:60px;
     color:rgb(255,111,34);
     text-align:center;
+}
+strong{
+    color:rgb(255,111,34);
 }
 
 /*/Table styles /*/
