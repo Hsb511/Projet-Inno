@@ -88,6 +88,7 @@ td {
 /*/ input / select styles /*/
 select, input {
     width: 80%;
+    background-color:lightgrey;
 }
 select {
     font-size:32px;
@@ -117,6 +118,9 @@ input {
 #reset{
     float:right;
     margin-right:23%;
+}
+.s-common-button {
+    background-color:rgb(255,111,34);
 }
 </style>
 <h1 id="title"> 
