@@ -1,6 +1,7 @@
 <?php
 if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     $_SESSION = array();
+    fillBaseBD();
 }
 ?>
 
@@ -89,17 +90,16 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     accounts : array pseudo => (profileID, helps => array(profileIdOfHelped, task), manage=> array(profilId)). tasks is an enumeration of defined tasks
     */
     function fillBaseBD(){
-        //construction de la DB
-        $profiles = array(
-            "0" => array('firstName' => 'Paulette', 'lastName' => 'Dubois', 'birthdate'=> '26/03/1935', 'address' => "3 rue du vieux Chemin, 39200 Saint-Claude", "helpedBy" => array("0"=>1)), 
-            "1" => array('firstName' => 'Véronique', 'lastName' => 'Duval', 'birthdate'=> '26/03/1971', 'address' => "39 rue du général de Gaulle, 75000 Paris", "helpedBy" => array()), 
-            "2" => array('firstName' => 'Maxime', 'lastName' => 'Turtille', 'birthdate'=> '26/03/1995', 'address' => "10 rue du vieux Chemin, 39200 Saint-Claude", "helpedBy" => array())
-        );
-        $accounts = array(
-            "PauletteDubois" => array("profilID" => "0", "helps"=>array(), 'manage' => array()),
-            "Vero45" => array("profilID" => "1", "helps"=>array(), 'manage' => array("0")),
-            "max38" => array("profilID" => "2", "helps"=>array("0" => "courses"), 'manage' => array())
-        );
+        //importation de la DB
+        include "user/virtualisedDB/people.php";
+        include "user/virtualisedDB/announces.php";
+
+        //copie dans les variables de session
+        $_SESSION["profiles"] = $profiles;
+        $_SESSION["users"] = $users;
+        $_SESSION["announces"] = $announces;
+        $_SESSION["tasks"] = $tasks;
+        $_SESSION["task_types"] = $task_types;
     }
 
 ?>

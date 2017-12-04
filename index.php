@@ -13,14 +13,15 @@
         //vérification que l'utilisateur est enregistré, sinon on redirige vers la page de connexion
         if (array_key_exists($_POST["username"], $users) == false){
             echo "<script type='text/javascript'>location.href = 'index.php?page=connection';</script>";
-            print_r($users);
         }
-        else{echo "coucou";}
-    
-
-        //stockage du username dans les infos de session
-        $_SESSION["username"] = $_POST["username"];
-        //chargement de la base de donnée virtuelle de base dans les informations de session pour cette utilisateur (pour la démo)
+        //on redirige vers la bonne page d'acceuil
+        else{
+            $_SESSION["username"] = $_POST["username"];
+            //on cherche le type d'utilisateur de ce compte
+            $type = $profiles[ $users[ $_POST["username"] ]["profileID"] ]["type"];
+            echo "<script type='text/javascript'>location.href = 'index.php?zone=user&type=$type&page=homepage';</script>";
+        }
+        exit(); //ça évite de générer le reste
     }
 ?>
 <!DOCTYPE html>
@@ -32,9 +33,10 @@
 
     <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
     <link href="./Proxygeia_files/logo3.png" rel="shortcut icon" type="image/x-icon">
-
+    
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/editor.8d35e9c6b8cf8126cee9.bundle.css">
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/main_v4_editor.6cf9cd30433bcfb50ea4.bundle.css">
+    <link rel="stylesheet" type="text/css" href="./form/stylesheet.css">
 
     <meta name="csrf-param"s-navbar-section content="authenticity_token">
     <meta name="csrf-token" content="bwTgmMX7SuGqhLDjdkTz0v5rd7JSPs+eFQLtVOpCCldmuMF/cJW4BKAEYbTremNnkMAxZXKOJej+hADXc5PS7Q==">
@@ -44,38 +46,50 @@
     $pageToInclude = "";
     // contenus des pages relatives au compte
     //page de connexion
-    if(isset($_GET["page"]) && $_GET["page"]=="connection"){
+    if(isset($_GET["page"]) && ($_GET["page"]=="connection" || $_GET["page"]=="form")) {
         $menu = [["Proxygéia","#proxygeia","./Proxygeia.html"],["Fonctionnalités","#fonctionnalites","./Proxygeia.html"],["Témoignages","#temoignages","./Proxygeia.html"],["Particuliers","#particulier","./Proxygeia.html"],["Contactez-nous","#contact","./Proxygeia.html"]] ; 
-        $pageToInclude = "connection.php" ;
+        if ($_GET["page"]=="connection") {
+           $pageToInclude = "connection.php" ;
+        } elseif ($_GET["page"]=="form") {
+            $pageToInclude = "form/form.php";
+        }
     }
     //Zone user
     elseif(isset($_GET["zone"]) && $_GET["zone"] == "user"){
+        //définition d'une variable bien pratique pour générer les pages
+        $profile = $_SESSION["profiles"][  $_SESSION["users"][$_SESSION["username"]]["profileID"]   ];
+
         //Type helper
         if (isset($_GET["type"]) && $_GET["type"] == "helper"){
-            $menu=[["Ma page","./index.php?zone=user&page=homepage&type=helper",""],
-            ["Mes actions","./index.php?zone=user&page=my_actions&type=helper",""],
-            ["Notifications","./index.php?zone=user&page=notifications&type=helper",""]];
+            $menu = [["Tableau de bord","./index.php?zone=user&type=helper&page=homepage",""],
+                    ["Proposer de l'aide","./index.php?zone=user&type=helper&page=my-actions",""],
+                    ["Mes messages","./index.php?zone=user&type=helper&page=notifications",""],
+                    ["Gérer mes aides","./index.php?zone=user&type=helper&page=list-announces",""],
+                    ["Déconnexion","./index.php?page=connection",""]] ;  
             //affichage suivant la page
-            if(isset($_GET["page"]) && $_GET["page"] == "my_actions"){
+            if(isset($_GET["page"]) && $_GET["page"] == "my-actions"){
                 $pageToInclude = "./user/helper/my_actions.php";
             }
             elseif(isset($_GET["page"]) && $_GET["page"] == "notifications"){
-                $pageToInclude = "./user/helper/notifications.php";
+                $pageToInclude = "./user/helper/notifications.php";                
+            }
+            elseif(isset($_GET["page"]) && $_GET["page"] == "list-announces"){
+                $pageToInclude = "./user/helper/listAnnounces.php";                
             }
             //page d'accueil
-            else{             
-                $pageToInclude = "./user/helper/homepage.php";
+            else{
+                $pageToInclude = "./user/helper/homepage.php";                
             }
         }
 
 
         //Type helped
         if (isset($_GET["type"]) && $_GET["type"] == "helped"){
-            $menu = [["Tableau de bord","./user/main.php?zone=user&type=helped&page=homepage",""],
-                    ["Demander une aide","./user/main.php?zone=user&type=helped&page=search-help",""],
-                    ["mes messages","./user/main.php?zone=user&type=helper&page=notifications",""],
-                    ["Gérer ma famille","./user/main.php?zone=user&type=helped&age=manage-operations",""]] ; 
-
+            $menu = [["Tableau de bord","./index.php?zone=user&type=helped&page=homepage",""],
+                    ["Demander une aide","./index.php?zone=user&type=helped&page=search-help",""],
+                    ["mes messages","./index.php?zone=user&type=helped&page=notifications",""],
+                    ["Gérer ma famille","./index.php?zone=user&type=helped&page=manage-operations",""],
+                    ["Déconnexion","./index.php?page=connection",""]] ; 
             //affichage suivant la page
             //page de demande d'aide
             if(isset($_GET["page"]) && $_GET["page"] == "search-help"){
@@ -83,7 +97,11 @@
             }
             //page de suivi des opérations
             elseif(isset($_GET["page"]) && $_GET["page"] == "manage-operations"){
-                
+                $pageToInclude = "./user/helped/manage-operations.php";
+            }
+            //page de suivi de nouvelle demande d'aide
+            elseif(isset($_GET["page"]) && $_GET["page"] == "new-help"){
+                $pageToInclude = "./user/helped/new-help.php";
             }
             //page d'accueil
             else{
