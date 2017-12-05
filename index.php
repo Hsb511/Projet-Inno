@@ -159,7 +159,7 @@
                     </ul>
                 </div>
                 <div class="s-button-group ib s-component" style="float:right;  margin-right:8px;margin-left: 23px;">
-                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);" target="_blank">
+                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);">
                         MON COMPTE
                     </a>
                 </div>
