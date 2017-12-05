@@ -1,6 +1,11 @@
 <?php
     //Valeurs par défaut
-    $default= ['lien'=>"",'age'=>"",'city'=>"", 'street'=>""];
+    $default= ['lien'=>"",'age'=>"",'city'=>"", 'street'=>"",'frequency'=>"",'services'=>""];
+    include("./user/virtualisedDB/announces.php");
+    foreach ($task_types as $id => $task) {
+        $default[$id]=$task;
+    }
+
     
     //On parcourt les infos et on regarde celle qui sont déjà remplies et correctes 
     foreach($default as $info => $value) {
@@ -87,6 +92,9 @@ td {
     font-size:23px;
     padding:0px;
 }
+#checkbox-line {
+    font-size:23px;
+}
 
 /*/ input / select styles /*/
 select, input {
@@ -104,6 +112,10 @@ input {
     border-color:black;
     border-width:1px;
     border-style:visible;
+}
+.checkbox {
+    width:20px;
+    transform: scale(1.5);
 }
 /*/ button styles /*/
 #button {
@@ -176,20 +188,45 @@ input {
     <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
         <td> <b>Quel âge</b> à cette personne ? </td> 
-        <td> <?php echo("<input type='text' name='nom' class='form' value='".$default['age']."'>"); ?>  </td>
+        <td> <?php echo("<input type='text' name='age' class='form' value='".$default['age']."'>"); ?>  </td>
     </tr>
     <!-- Lignes pour l'adresse de la personne : imput -->
     <tr>
         <td> A quelle <b>adresse</b> habite-elle ? </td> 
         <td>  </td>
     </tr>
-    <tr >
-        <td class="sub-tr"> Code postal / Ville </td>
-        <td> <?php echo("<input type='text' class='form' name='nom' value='".$default['city']."'>"); ?> </td>
+        <tr >
+            <td class="sub-tr"> Code postal / Ville </td>
+            <td> <?php echo("<input type='text' class='form' name='city' value='".$default['city']."'>"); ?> </td>
+        </tr>
+        <tr >
+            <td class="sub-tr"> Adresse </td>
+            <td> <?php echo("<input type='text' class='form' name='street' value='".$default['street']."'>"); ?> </td>
+        </tr>
+    <tr>
+        <td> A quelle <b>fréquence</b> voulez-vous d'une aide ? </td>
+        <td> <?php echo("<input type='text' class='form' name='frequency' value='".$default['frequency']."'>"); ?> </td>
     </tr>
-    <tr >
-        <td class="sub-tr"> Adresse </td>
-        <td> <?php echo("<input type='text' class='form' name='nom' value='".$default['street']."'>"); ?> </td>
+    <tr>
+        <td> De quels <b>services</b> avez-vous besoin ? </td>
+        <td id = "checkbox-line"> 
+            <?php 
+            $checked = "";
+            foreach($task_types as $id => $task) {
+                if ($default[$id] === 0) {
+                    $checked = "checked";
+                } else {
+                    $checked = "";
+                }
+                echo("
+                <div >
+                    <input type='checkbox' id='$id' name='$id' value='$task' class='checkbox' $checked>
+                    <label for='$task'>$task</label>
+                </div>
+                ");
+            }
+            ?>
+        </td>
     </tr>
 </table>
 <div id="button">
