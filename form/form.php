@@ -159,7 +159,7 @@ input {
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr> 
         <td><b>Pour qui</b> cherchez vous de l'aide ? </td>
-        <td><select id="lien" class="form"> 
+        <td><select id="lien" class="form" name="lien"> 
             <?php
             if ($default['lien'] == 'pour un.e ami.e') {
                 echo("<option value='pour un parent'>pour un parent</option>
@@ -188,7 +188,7 @@ input {
     <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
         <td> <b>Quel âge</b> à cette personne ? </td> 
-        <td> <?php echo("<input type='text' name='age' class='form' value='".$default['age']."'>"); ?>  </td>
+        <td> <?php echo("<input type='number' name='age' class='form' value='".$default['age']."'>"); ?>  </td>
     </tr>
     <!-- Lignes pour l'adresse de la personne : imput -->
     <tr>
@@ -205,7 +205,16 @@ input {
         </tr>
     <tr>
         <td> A quelle <b>fréquence</b> voulez-vous d'une aide ? </td>
-        <td> <?php echo("<input type='text' class='form' name='frequency' value='".$default['frequency']."'>"); ?> </td>
+        <td>
+            <select id="frequency" class="form" name="frequency" > 
+            <?php 
+                $frequency = ['jour'=>'tous les jours', '1/2 jour'=>'une fois tous les deux jours', '1/2 semaine'=> 'moins de 3 fois par semaine', '1/7 semaine'=> 'une fois par semaine', '1/4 mois'=> 'quelques fois par mois', 'mois'=> 'occasionnelement', 'une seule fois'=> 'une fois seulement'];
+                foreach($frequency as $id => $freq) {
+                    echo("<option value='".$freq."'>".$freq."</option>"); 
+                }
+            ?> 
+            </select>
+        </td>
     </tr>
     <tr>
         <td> De quels <b>services</b> avez-vous besoin ? </td>
