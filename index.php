@@ -105,6 +105,7 @@
             }
             //page d'accueil
             else{
+                $pageToInclude = "./form/offers.php";
                 
             }
         }
