@@ -188,7 +188,7 @@ input {
     <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
         <td> <b>Quel âge</b> à cette personne ? </td> 
-        <td> <?php echo("<input type='number' name='age' class='form' value='".$default['age']."'>"); ?>  </td>
+        <td> <?php echo("<input type='number' id='age' name='age' class='form' value='".$default['age']."'>"); ?>  </td>
     </tr>
     <!-- Lignes pour l'adresse de la personne : imput -->
     <tr>
@@ -197,11 +197,11 @@ input {
     </tr>
         <tr >
             <td class="sub-tr"> Code postal / Ville </td>
-            <td> <?php echo("<input type='text' class='form' name='city' value='".$default['city']."'>"); ?> </td>
+            <td> <?php echo("<input type='text' class='form' id='city' name='city' value='".$default['city']."'>"); ?> </td>
         </tr>
         <tr >
             <td class="sub-tr"> Adresse </td>
-            <td> <?php echo("<input type='text' class='form' name='street' value='".$default['street']."'>"); ?> </td>
+            <td> <?php echo("<input type='text' class='form' id='street' name='street' value='".$default['street']."'>"); ?> </td>
         </tr>
     <tr>
         <td> A quelle <b>fréquence</b> voulez-vous d'une aide ? </td>
@@ -243,3 +243,26 @@ input {
     <input type="reset" name="Reset" value="Annuler" id="reset"  class="s-common-button s-font-body s-action-button" >
 </div>
 </form>
+<br/>
+<div>
+<button onclick="remplirQuestionnaire()" class="s-common-button s-font-body s-action-button">Remplir le formulaire pour la démonstration</button>
+<script>
+function remplirQuestionnaire() {
+    document.getElementById('lien').value="pour un parent";
+    document.getElementById('age').value=89;
+    document.getElementById('city').value="29400 Landivisiau";
+    document.getElementById('street').value="5 avenue du général de Gaulle";
+    document.getElementById('frequency').value='une fois tous les deux jours';
+    document.getElementById('0').checked = false; //achat et livraison de courses
+    document.getElementById('1').checked = true;  //repassage
+    document.getElementById('2').checked = false; //vaisselle
+    document.getElementById('3').checked = false; //jardinage
+    document.getElementById('4').checked = false; //cuisine
+    document.getElementById('5').checked = false; //jeu de société
+    document.getElementById('6').checked = false; //discussion
+    document.getElementById('7').checked = true;  //tâche administrative
+}
+</script>
+</div>
+
+

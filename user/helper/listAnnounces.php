@@ -1,16 +1,29 @@
 <!--liste les annonces d'aide postée sur le site par l'utilisateur. propose d'en rajouter ou d'en modifier. -->
-<br/>
-<br/>
-<h1> Liste de vos annonces </h1>
-
+<div >
+    <div class='s-title-group ' style='padding-top :80px; padding-bottom : 80px; color : rgb(255, 111, 34); font-size: 36px; line-height:43.2px;text-align:center;'>
+        <div class='s-title '>
+            <div class='s-component s-text'>
+                <h2 class=''>
+                    <div class='s-component-content needsclick recursive s-font-title'
+                    style='outline: 0px;' tabindex='0' role='textbox'
+                    aria-label='false'>
+                        <p> Liste de vos annonces </p>
+                    </div>
+                </h2>
+            </div>
+        </div>        
+    </div>
+</div>
 <?php
 //affiche la liste des annonces auquelles l'aidant participe
 //Chaque annonce est formée de tâches régulières ou non à effectuer
-echo("annonces : <br/>");
 //parcourt la liste des annonces
 foreach($profile["announces"] as $key => $id){
     $announce = $_SESSION["announces"][$id];
-    echo "<b>nom : </b>".$announce["title"]."<br/><b>description :</b> ".$announce["description"]."<br/>";
+
+    echo("<b>nom :".$announce['title']."</b>");                         
+
+    echo "description : ".$announce["description"]."<br/>";
     echo "fréquence : ".$announce["frequency"]." fois par semaine (";
     foreach($announce["days"] as $id => $day){
         echo $day." ";
