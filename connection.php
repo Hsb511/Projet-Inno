@@ -7,12 +7,37 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
 
 //inscription d'un nouveau compte
 if (isset($_GET["event"]) && $_GET["event"] == "new-account"){
+    print_r($_POST);
     //création des 2 nouveaux profils
+    //profil de la personne agée
     $id = count($_SESSION["profiles"]);
-    //$_SESSION["profiles"][$id] = array("firstName" => $_POST[]) 
+    $_SESSION["profiles"][$id] = array( "firstName" => $_POST["firstNameHelped"], 
+                                        "lastName" => $_POST["lastNameHelped"], 
+                                        "street" => $_POST["street"],
+                                        "city" => $_POST["city"], 
+                                        "birthdate" => $_POST["birthdateHelped"], 
+                                        "type" => "helped", 
+                                        "helps" => array(), 
+                                        "announces" => array()); 
+
+
+    //creation de l'annonce
+
+
+    
+    //profil de la personne qui inscrit la personne agée
+    $id = count($_SESSION["profiles"]);
+    $_SESSION["profiles"][$id] = array( "firstName" => $_POST["firstName"], 
+                                        "lastName" => $_POST["lastName"], 
+                                        "street" => "",
+                                        "city" => "", 
+                                        "birthdate" => $_POST["birthdate"], 
+                                        "type" => "helped", 
+                                        "helps" => array(), 
+                                        "announces" => array());
 
     //création du compte de la personne qui inscrit (famille en général)
-    //$_SESSION["users"][$_POST["username"]];
+    $_SESSION["users"][$_POST["username"]]["profileID"] = $id;
 }
 ?>
 

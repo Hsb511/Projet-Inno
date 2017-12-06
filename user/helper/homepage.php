@@ -8,6 +8,7 @@
                             aria-label="false">
                             <p> 
                                 <?php
+                                print_r($profiles);
                                     echo ($profile["firstName"]." ".$profile["lastName"]);
                                 ?>
                             </p>

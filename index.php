@@ -7,18 +7,18 @@
     //Il n'y a pas de persistance. La démo est réinitialisée à chaque nouvelle démo.
     //Les infos d'une démo sont sauvegardées dans les variables de session.
     
-    //si l'utilise vient de la page de connexion, son username sera passé en post.
-    if(isset($_POST["username"])){
+    //si l'utilise vient de la page de connexion, son username sera passé en post. event signifie qu'il a créé un compte
+    if(isset($_POST["username"]) && isset($_GET["event"]) != true){
         include "user/virtualisedDB/people.php";
         //vérification que l'utilisateur est enregistré, sinon on redirige vers la page de connexion
-        if (array_key_exists($_POST["username"], $users) == false){
+        if (array_key_exists($_POST["username"], $_SESSION["users"]) == false){
             echo "<script type='text/javascript'>location.href = 'index.php?page=connection';</script>";
         }
         //on redirige vers la bonne page d'acceuil
         else{
             $_SESSION["username"] = $_POST["username"];
             //on cherche le type d'utilisateur de ce compte
-            $type = $profiles[ $users[ $_POST["username"] ]["profileID"] ]["type"];
+            $type = $_SESSION["profiles"][ $_SESSION["users"][ $_POST["username"] ]["profileID"] ]["type"];
             echo "<script type='text/javascript'>location.href = 'index.php?zone=user&type=$type&page=homepage';</script>";
         }
         exit(); //ça évite de générer le reste
