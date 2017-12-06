@@ -126,7 +126,12 @@
     Vous bénéficiez d'une visite <b>toutes les semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
     <form method = "post" action='index.php?page=create-account'>
-        <input type="submit" name="hebdomadaire" value="choisir">
+        <div style='margin : auto; width : 20%; text-align: center;'>
+            <input type="submit" name="hebdomadaire" value="choisir" style="border-color: 
+                black; background-color :rgba(0, 0, 0, 0.1); border-width :
+                    1px; border-style :solid; border-radius : 3px; width : 100px; 
+                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+        </div>
     </form>
 </div>
 <br>
@@ -138,7 +143,12 @@
         Vous pouvez bénéficier d'une visite <b>deux fois par semaine</b>. Voici les tarifs pour cet abonnement :
     </p>
     <form method = "post" action='index.php?page=create-account'>
-        <input type="submit" name="bihebdomadaire" value="choisir">
+        <div style='margin : auto; width : 20%; text-align: center;'>
+            <input type="submit" name="bihebdomadaire" value="choisir" style="border-color: 
+                black; background-color :rgba(0, 0, 0, 0.1); border-width :
+                    1px; border-style :solid; border-radius : 3px; width : 100px; 
+                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+        </div>
     </form>
 </div>
 <div class = "encadre encadre-sub" id = "encadre-sub-droit" >
@@ -149,7 +159,12 @@
         Vous pouvez bénéficier d'une visite <b>toutes les deux semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
     <form method = "post" action='index.php?page=create-account'>
-        <input type="submit" name="bimensuel" value="choisir">
+        <div style='margin : auto; width : 20%; text-align: center;'>
+            <input type="submit" name="bimensuel" value="choisir" style="border-color: 
+                    black; background-color :rgba(0, 0, 0, 0.1); border-width :
+                        1px; border-style :solid; border-radius : 3px; width : 100px; 
+                        padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+        </div>
     </form>
 </div>
 <div class = "encadre encadre-sub" id="encadre-sub-milieu">
@@ -160,7 +175,12 @@
     Vous pouvez bénéficier d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
 </p>
 <form method = "post" action='index.php?page=create-account'>
-        <input type="submit" name="journalier" value="choisir">
+    <div style='margin : auto; width : 20%; text-align: center;'>
+        <input type="submit" name="journalier" value="choisir" style="border-color: 
+                    black; background-color :rgba(0, 0, 0, 0.1); border-width :
+                        1px; border-style :solid; border-radius : 3px; width : 100px; 
+                        padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+    </div>
     </form>
 </div>
 <?php
