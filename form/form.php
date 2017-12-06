@@ -55,7 +55,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
                 </div>
                 <div class="s-button-group ib s-component">
                     <a  class="s-common-button s-font-body s-action-button" 
-                        href="index.php?page=form"
+                        href="index.php?page=offre&form=blank"
                         target="_blank" 
                         style="text-transform:uppercase">
                         Nos offres
@@ -154,7 +154,7 @@ input {
     Formulaire
 </h1>
 
-<form method = "post" action='index.php?page=offre'>
+<form method = "post" action='index.php?page=offre&form=filled'>
 <table id="table">
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr> 

@@ -1,57 +1,128 @@
 <br>
 <?php
-    //page d'affichage des offres
+    //page d'affichage des offres ->  des abonnements
 
     //print_r($_POST);
     $_SESSION["form_answer"] = $_POST; 
     //on détecte si l'utilisateur rentre les valeurs de la démo. 
-    //Si c'est le cas on affiche les annonces de démo.
-    //Sinon on affiche qu'on va rechercher et recontacter la personne
 
-    if (in_array($_POST["city"], ["Landivisiau", "LANDIVISIAU", '29400', '29400 Landivisiau', "29400 LANDIVISIAU"])
-        && in_array($_POST["frequency"], ["une fois tous les deux jours", "moins de 3 fois par semaine", "une fois par semaine", "quelques fois par mois", "occasionnellement", "une fois seulement"]))
+    echo("<style>
+    .encadre {
+        background-color:white;
+        border: 4px solid; 
+        border-radius: 15px;
+    }
+    .titre-encadre {
+        padding:16px;
+        font-weight: bold; 
+        font-size:23px
+    }
+    #encadre-principal {
+        color:red;
+    }
+    #encadre-sub-gauche {
+        color:blue;
+    }
+    #encadre-sub-droit {
+        color:green;
+    }   
+    #encadre-sub-milieu {
+        color:yellow;
+    }    
+    ");
 
-    //si l'on est sur cette page en étant loggé, on affiche la liste des offres
-    if (isset($_SESSION["username"])){
-        //affichage des offres
+    if ($_GET['form'] == 'blank') {
+        echo("
+        #encadre-principal {
+            width:45%; 
+            min-height:300px; 
+            float:left;
+            margin-left:3%; 
+            margin-top:12px;
+        }
+        #encadre-sub-gauche {
+            width:45%; 
+            min-height:300px; 
+            float: right;
+            margin-right:3%;
+        }
+        #encadre-sub-milieu {
+            width:45%; 
+            min-height:300px; 
+            float:right;
+            margin-right:3%;
+            margin-top:2%;
+        }
+        #encadre-sub-droit {
+            width:45%; 
+            min-height:300px; 
+            float:left;
+            margin-left:3%; 
+            margin-top:2%;
+        }");
+        
+    } elseif ($_GET['form'] == 'filled') {
+        echo("
+        .encadre-sub {
+            width:30%; 
+            min-height:300px;
+        }
+        #encadre-principal {
+            width:80%; 
+            min-height:300px; 
+            margin:auto; 
+        }
+        #encadre-sub-gauche {
+            margin-left:2%;
+            float:left;
+        }
+        #encadre-sub-milieu {
+            margin:auto;
+        }
+        #encadre-sub-droit {
+            margin-right:2%;
+            float:right;
+             
+        }");
     }
-    else{
-        //affichage du nombre d'offres et invitation à se créer un compte
-    }
+    echo("</style>");
+
 ?>
-                            <div style = "background-color:white; width:80%; min-height:300px; color:rgb(255,111,34); margin:auto; border: 4px solid; border-radius: 15px;">
-                                <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
-                                <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-                                    <p>
-                                        Voici l'offre qui correspond le plus à vos besoin :
-                                    </p>   
-                                </div>
-                            </div>
-                            <div style="min-height:10%"><p>.</p></div>
-                            <div style = "background-color:white; width:30%; min-height:300px; color:rgb(255,111,34); margin-left:2%; border: 4px solid; border-radius: 15px;float:left">
-                                <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
-                                <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-                                    <p>
-                                        Voici l'offre qui correspond le plus à vos besoin :
-                                    </p>   
-                                </div>
-                            </div>
-                            <div style = "background-color:white; width:30%; min-height:300px; color:rgb(255,111,34); margin-right:2%; border: 4px solid; border-radius: 15px;float:right">
-                                <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
-                                <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-                                    <p>
-                                        Voici l'offre qui correspond le plus à vos besoin :
-                                    </p>   
-                                </div>
-                            </div>
-                            <div style = "background-color:white; width:30%; min-height:300px; color:rgb(255,111,34); margin:auto; border: 4px solid; border-radius: 15px;">
-                                <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
-                                <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-                                    <p>
-                                        Voici l'offre qui correspond le plus à vos besoin :
-                                    </p>   
-                                </div>
-                            </div>
+
+<div class= "encadre" id="encadre-principal">
+    <p class= "titre-encadre">
+        <?php if ($_GET['form'] == 'filled') {
+            echo("Voici la formule qui correspond le plus à vos besoin : ");
+        } ?>
+        <strong>Abonnement hebdomadaire</strong> 
+    </p>
+    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
+            Voici l'offre qui correspond le plus à vos besoin :
+    </div>
+</div>
+<br>
+<div class = "encadre encadre-sub" id = "encadre-sub-gauche">
+    <p class= "titre-encadre">Voici la formule qui correspond le plus à vos besoin :</p>
+    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
+            Voici l'offre qui correspond le plus à vos besoin :  
+    </div>
+</div>
+<div class = "encadre encadre-sub" id = "encadre-sub-droit" >
+    <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
+    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
+        <p>
+            Voici l'offre qui correspond le plus à vos besoin :
+        </p>   
+    </div>
+</div>
+<div class = "encadre encadre-sub" id="encadre-sub-milieu">
+    <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
+    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
+        <p>
+            Voici l'offre qui correspond le plus à vos besoin :
+        </p>   
+    </div>
+</div>
 <?php
     function findHelpers($city, $frequency, $tasks){
 
