@@ -243,9 +243,12 @@ input {
     <input type="reset" name="Reset" value="Annuler" id="reset"  class="s-common-button s-font-body s-action-button" >
 </div>
 </form>
-<br/>
-<div>
-<button onclick="remplirQuestionnaire()" class="s-common-button s-font-body s-action-button">Remplir le formulaire pour la démonstration</button>
+<div style="margin : 0px auto 30px auto; text-align: center; font-size: 20px; color: rgb(51 ,51, 51); font-weight: 400;">
+<button onclick="remplirQuestionnaire()" style="border-color: 
+                black; background-color :rgba(0, 0, 0, 0.1); border-width :
+                    1px; border-style :solid; border-radius : 3px; width : auto; 
+                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">Remplir le formulaire pour la démonstration</button>
+
 <script>
 function remplirQuestionnaire() {
     document.getElementById('lien').value="pour un parent";

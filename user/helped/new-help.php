@@ -38,6 +38,9 @@
             <?php
             echo '<input type="hidden" name="announceID" value='.$_GET["announceID"].'>';
             ?>
-            <input type="submit" value="faire ma demande">
+            <input type="submit" value="Faire ma demande" style="border-color: 
+            rgb(255, 111, 34); background-color :rgb(255, 111, 34); border-width :
+                    1px; border-style :solid; border-radius : 3px; width : auto; 
+                    padding : 8px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px; font-size :20px; color : white;">
         </form>
     </div>
