@@ -18,16 +18,16 @@
         font-size:23px
     }
     #encadre-principal {
-        color:red;
+        color:rgb(255,111,34);
     }
     #encadre-sub-gauche {
-        color:blue;
+        color:rgb(255,64,34);
     }
     #encadre-sub-droit {
-        color:green;
+        color:rgb(0,0,82);
     }   
     #encadre-sub-milieu {
-        color:yellow;
+        color:rgb(56,89,156);
     }    
     ");
 
@@ -94,7 +94,7 @@
         <?php if ($_GET['form'] == 'filled') {
             echo("Voici la formule qui correspond le plus à vos besoin : ");
         } ?>
-        <strong>Abonnement hebdomadaire</strong> 
+        <strong><b>Abonnement hebdomadaire</b></strong> 
     </p>
     <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
             Voici l'offre qui correspond le plus à vos besoin :

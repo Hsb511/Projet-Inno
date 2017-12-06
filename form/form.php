@@ -21,7 +21,7 @@ Puis on valide et le site indique s'il y a des aidants disponibles pour le servi
 Puis il demande de créer le compte avec la demande d'aide préremplie
 */
 ?>
-<div class="s-bg-image s-bg-light-text s-bg-overlay s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux_flous.png&quot;);">
+<div class="s-bg-image s-bg-light-text s-bg-overlay s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux-form.jpg&quot;);">
     <div class="s-rva-text sixteen columns">
             <div class="s-title-group  ">
                 <div class="s-subtitle">
