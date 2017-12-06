@@ -78,7 +78,9 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
 <h1 id="title"> 
     Créez votre compte dès à présent afin que nous vous recontactions et profiter de nos services !
 </h1>
-
+<?php
+print_r($_SESSION["form_answer"]);
+?>
 <form method = "post" action='index.php?page=connection&event=new-account'>
 <table id="table">
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
@@ -159,7 +161,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
             <?php 
             $checked = "";
             foreach($task_types as $id => $task) {
-                if ($default[$id] === 0) {
+                if (isset($_SESSION["form_answer"][$id])) {
                     $checked = "checked";
                 } else {
                     $checked = "";
@@ -201,4 +203,6 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
     <input type="submit" name="submit" value="Valider" id="submit"  class="s-common-button s-font-body s-action-button" >
     <input type="reset" name="Reset" value="Annuler" id="reset"  class="s-common-button s-font-body s-action-button" >
 </div>
+
+
 </form>

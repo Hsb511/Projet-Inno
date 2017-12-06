@@ -2,9 +2,7 @@
 <?php
     //page d'affichage des offres ->  des abonnements
 
-    //print_r($_POST);
     $_SESSION["form_answer"] = $_POST; 
-    //on détecte si l'utilisateur rentre les valeurs de la démo. 
 
     echo("<style>
     strong{
@@ -116,7 +114,7 @@
         echo("<p class = 'titre-encadre'>");
     }
     ?>
-        <strong><b>Abonnement hebdomadaire</b></strong> 
+        <strong><b>Abonnement hebdomaire</b></strong> 
     </p>
     <?php 
     if ($_GET['form'] == 'filled') {
@@ -125,8 +123,11 @@
         echo("<p class = 'encadre-text'>");
     }     
     ?>
-    Vous bénéficiez d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
+    Vous bénéficiez d'une visite <b>toutes les semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
+    <form method = "post" action='index.php?page=create-account'>
+        <input type="submit" name="hebdomadaire" value="choisir">
+    </form>
 </div>
 <br>
 <div class = "encadre encadre-sub" id = "encadre-sub-gauche">
@@ -136,6 +137,9 @@
     <p class = "encadre-text">
         Vous pouvez bénéficier d'une visite <b>deux fois par semaine</b>. Voici les tarifs pour cet abonnement :
     </p>
+    <form method = "post" action='index.php?page=create-account'>
+        <input type="submit" name="bihebdomadaire" value="choisir">
+    </form>
 </div>
 <div class = "encadre encadre-sub" id = "encadre-sub-droit" >
     <p class= "titre-encadre">
@@ -144,6 +148,9 @@
     <p class = "encadre-text">
         Vous pouvez bénéficier d'une visite <b>toutes les deux semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
+    <form method = "post" action='index.php?page=create-account'>
+        <input type="submit" name="bimensuel" value="choisir">
+    </form>
 </div>
 <div class = "encadre encadre-sub" id="encadre-sub-milieu">
     <p class= "titre-encadre">
@@ -152,6 +159,9 @@
     <p class = "encadre-text">
     Vous pouvez bénéficier d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
 </p>
+<form method = "post" action='index.php?page=create-account'>
+        <input type="submit" name="journalier" value="choisir">
+    </form>
 </div>
 <?php
     function findHelpers($city, $frequency, $tasks){
