@@ -43,7 +43,7 @@ foreach($profile["announces"] as $key => $id){
                     <tr style='color :rgb(255, 111, 34); padding: 15px;'>
                         <th align='center' style ='padding: 15px;'><b>Type de taĉhe </b> </th>
                         <th align='center' style ='padding: 15px;'><b>Commentaire</b></th>
-                        <th align='center' style ='padding: 15px;'><b>Régulier</b></th>
+                        <th align='center' style ='padding: 15px;'><b>Fréquence</b></th>
                     </tr>";
             //parcourt la liste des tâches de l'annonce
             foreach($announce["tasks"] as $id => $taskID){    

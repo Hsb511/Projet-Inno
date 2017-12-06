@@ -168,7 +168,7 @@
                                     MON COMPTE
                                 </a>";
                             }
-                            elseif($_SESSION["profiles"][ $_SESSION["users"][ $_SESSION["username"]["profileID"] ]  ]["type"]=="helped"){
+                            elseif($_SESSION["profiles"][ $_SESSION["users"][ $_SESSION["username"]]["profileID"]]["type"]=="helped"){
                                 echo "
                                 <a class='s-common-button s-font-body s-action-button' href='./index.php?zone=user&type=helped&page=homepage' style='background-color:rgb(255, 111, 34);'>
                                     MON COMPTE
