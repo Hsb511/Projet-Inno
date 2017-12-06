@@ -46,7 +46,8 @@
     $pageToInclude = "";
     // contenus des pages relatives au compte
     //page de connexion
-    if(isset($_GET["page"]) && ($_GET["page"]=="connection" || $_GET["page"]=="form" || $_GET["page"]=="offre")) {
+
+    if(isset($_GET["page"]) && ($_GET["page"]=="connection" || $_GET["page"]=="form" || $_GET["page"]=="offre" || $_GET["page"] == "create-account")) {
         $menu = [["Proxygéia","#proxygeia","./Proxygeia.html"],["Fonctionnalités","#fonctionnalites","./Proxygeia.html"],["Témoignages","#temoignages","./Proxygeia.html"],["Particuliers","#particulier","./Proxygeia.html"],["Contactez-nous","#contact","./Proxygeia.html"]] ; 
         if ($_GET["page"]=="connection") {
             $_SESSION["username"]="";            
@@ -55,6 +56,8 @@
             $pageToInclude = "form/form.php";
         } elseif ($_GET["page"]=="offre") {
             $pageToInclude = "form/offers.php";
+        } elseif ($_GET["page"]=="create-account"){
+            $pageToInclude = "form/create-account.php";
         }
     }
     //Zone user
