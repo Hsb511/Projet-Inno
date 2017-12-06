@@ -3,6 +3,7 @@ if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     $_SESSION = array();
     fillBaseBD();
 }
+
 ?>
 
     <div >
