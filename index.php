@@ -49,7 +49,8 @@
     if(isset($_GET["page"]) && ($_GET["page"]=="connection" || $_GET["page"]=="form" || $_GET["page"]=="offre")) {
         $menu = [["Proxygéia","#proxygeia","./Proxygeia.html"],["Fonctionnalités","#fonctionnalites","./Proxygeia.html"],["Témoignages","#temoignages","./Proxygeia.html"],["Particuliers","#particulier","./Proxygeia.html"],["Contactez-nous","#contact","./Proxygeia.html"]] ; 
         if ($_GET["page"]=="connection") {
-            $pageToInclude = "connection.php" ;
+            $_SESSION["username"]="";            
+            $pageToInclude = "connection.php" ;            
         } elseif ($_GET["page"]=="form") {
             $pageToInclude = "form/form.php";
         } elseif ($_GET["page"]=="offre") {
@@ -159,9 +160,28 @@
                     </ul>
                 </div>
                 <div class="s-button-group ib s-component" style="float:right;  margin-right:8px;margin-left: 23px;">
-                    <a class="s-common-button s-font-body s-action-button" href="./index.php?page=connection" style="background-color:rgb(255, 111, 34);">
-                        MON COMPTE
-                    </a>
+                    <?php
+                        if(isset($_SESSION["username"]) && $_SESSION["username"] != ""){
+                            if ($_SESSION["profiles"][ $_SESSION["users"][ $_SESSION["username"]]["profileID"]]["type"]=="helper"){
+                                echo "
+                                <a class='s-common-button s-font-body s-action-button' href='./index.php?zone=user&type=helper&page=homepage' style='background-color:rgb(255, 111, 34);'>
+                                    MON COMPTE
+                                </a>";
+                            }
+                            elseif($_SESSION["profiles"][ $_SESSION["users"][ $_SESSION["username"]["profileID"] ]  ]["type"]=="helped"){
+                                echo "
+                                <a class='s-common-button s-font-body s-action-button' href='./index.php?zone=user&type=helped&page=homepage' style='background-color:rgb(255, 111, 34);'>
+                                    MON COMPTE
+                                </a>";
+                            }
+                        }
+                        else {
+                            echo "
+                            <a class='s-common-button s-font-body s-action-button' href='./index.php?page=connection' style='background-color:rgb(255, 111, 34);'>
+                                MON COMPTE
+                            </a>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>

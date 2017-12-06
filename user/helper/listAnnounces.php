@@ -22,7 +22,7 @@ foreach($profile["announces"] as $key => $id){
     echo "</li><li>";
         echo "<div style='margin : auto; width: 1000px; text-align: left; font-size: 20px; color: rgb(51 ,51, 51); font-weight: 400;'>";
             $announce = $_SESSION["announces"][$id];
-            echo "<div style='padding : 5px; width :100%; margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px; text-align : center;'> <b>Nom : ".$announce['title']."</b> </div>";
+            echo "<div style='padding : 5px; width :100%; margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px; text-align : center;'> <b>".$announce['title']."</b> </div>";
             echo "<div style='padding: 20px 0px 20px 0px;'>";
             echo "<div style='padding : 5px; width :100%; margin: 4px 0px 4px 0px; line-height: 21px; font-size :20px;'> <b>Description :</b> ".$announce["description"]."</div>";
             $phase = "";
