@@ -97,14 +97,14 @@
         <strong><b>Abonnement hebdomadaire</b></strong> 
     </p>
     <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-            Voici l'offre qui correspond le plus à vos besoin :
+        Vous bénéficier
     </div>
 </div>
 <br>
 <div class = "encadre encadre-sub" id = "encadre-sub-gauche">
     <p class= "titre-encadre">Voici la formule qui correspond le plus à vos besoin :</p>
     <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-            Voici l'offre qui correspond le plus à vos besoin :  
+            <strong><b></b></strong>
     </div>
 </div>
 <div class = "encadre encadre-sub" id = "encadre-sub-droit" >
