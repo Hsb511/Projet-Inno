@@ -1,9 +1,19 @@
 <?php
+//réinitialisation de la démo
 if (isset($_GET["restartDemo"]) && $_GET["restartDemo"]){
     $_SESSION = array();
     fillBaseBD();
 }
 
+//inscription d'un nouveau compte
+if (isset($_GET["event"]) && $_GET["event"] == "new-account"){
+    //création des 2 nouveaux profils
+    $id = count($_SESSION["profiles"]);
+    //$_SESSION["profiles"][$id] = array("firstName" => $_POST[]) 
+
+    //création du compte de la personne qui inscrit (famille en général)
+    //$_SESSION["users"][$_POST["username"]];
+}
 ?>
 
     <div >

@@ -79,7 +79,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
     Créez votre compte dès à présent afin que nous vous recontactions et profiter de nos services !
 </h1>
 
-<form method = "post" action='index.php?page=connection'>
+<form method = "post" action='index.php?page=connection&event=new-account'>
 <table id="table">
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr class="table-header"> 
