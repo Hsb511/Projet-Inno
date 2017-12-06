@@ -7,6 +7,9 @@
     //on détecte si l'utilisateur rentre les valeurs de la démo. 
 
     echo("<style>
+    strong{
+        color:rgb(255,111,34);
+    }
     .encadre {
         background-color:white;
         border: 4px solid; 
@@ -15,7 +18,8 @@
     .titre-encadre {
         padding:16px;
         font-weight: bold; 
-        font-size:23px
+        font-size:23px;
+        color:black;
     }
     #encadre-principal {
         color:rgb(255,111,34);
@@ -28,7 +32,13 @@
     }   
     #encadre-sub-milieu {
         color:rgb(56,89,156);
-    }    
+    } 
+    .encadre-text {
+        font-size:18px;
+        color:black; 
+        margin: 0 16px;
+        line-height:20px
+    }
     ");
 
     if ($_GET['form'] == 'blank') {
@@ -68,6 +78,7 @@
             min-height:300px;
         }
         #encadre-principal {
+            font-size:24px;
             width:80%; 
             min-height:300px; 
             margin:auto; 
@@ -96,32 +107,34 @@
         } ?>
         <strong><b>Abonnement hebdomadaire</b></strong> 
     </p>
-    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-        Vous bénéficier
-    </div>
+    <p class = "encadre-text">
+        Vous bénéficiez d'une visite tous les jours
+    </p>
 </div>
 <br>
 <div class = "encadre encadre-sub" id = "encadre-sub-gauche">
-    <p class= "titre-encadre">Voici la formule qui correspond le plus à vos besoin :</p>
-    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-            <strong><b></b></strong>
-    </div>
+    <p class= "titre-encadre">
+        <strong><b>Abonnement bihebdomadaire</b></strong>
+    </p>
+    <p class = "encadre-text">
+        Vous pouvez bénéficier d'une visite 2 fois par semaine
+    </p>
 </div>
 <div class = "encadre encadre-sub" id = "encadre-sub-droit" >
-    <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
-    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-        <p>
-            Voici l'offre qui correspond le plus à vos besoin :
-        </p>   
-    </div>
+    <p class= "titre-encadre">
+        <strong><b>Abonnement bimensuel</b></strong>
+    </p>
+    <p class = "encadre-text">
+        Vous pouvez bénéficier d'une visite toutes les deux semaines
+    </p>
 </div>
 <div class = "encadre encadre-sub" id="encadre-sub-milieu">
-    <p style="padding:16px; font-weight: bold; font-size:23px">Voici la formule qui correspond le plus à vos besoin :</p>
-    <div style="color:black; margin-left:8px; margin-right:8px; font-style:italic; line-height:20px">
-        <p>
-            Voici l'offre qui correspond le plus à vos besoin :
-        </p>   
-    </div>
+    <p class= "titre-encadre">
+    <strong><b>Abonnement journalier</b></strong>
+    </p>
+    <p class = "encadre-text">
+    Vous pouvez bénéficier d'une visite tous les jours
+</p>
 </div>
 <?php
     function findHelpers($city, $frequency, $tasks){
