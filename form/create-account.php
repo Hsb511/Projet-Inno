@@ -1,7 +1,7 @@
 <head>
     
     
-    <link rel="stylesheet" media="screen" href="./stylesheet.css">
+    <link rel="stylesheet" media="screen" href="./stylesheet2.css">
     
 </head>
 
@@ -28,7 +28,7 @@ Puis on valide et le site indique s'il y a des aidants disponibles pour le servi
 Puis il demande de créer le compte avec la demande d'aide préremplie
 */
 ?>
-<div class="s-bg-image s-bg-light-text  s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux.jpg&quot;);">
+<div class="s-bg-image s-bg-light-text s-bg-overlay s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux_flous.png&quot;);">
     <div class="s-rva-text sixteen columns">
             <div class="s-title-group  ">
                 <div class="s-subtitle">
@@ -74,15 +74,19 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
 </div>
 
 
+
 <h1 id="title"> 
-    Formulaire
+    Créez votre compte dès à présent afin que nous vous recontactions et profiter de nos services !
 </h1>
 
-<form method = "post" action='index.php?page=offre&form=filled'>
+<form method = "post" action='index.php?page=connection'>
 <table id="table">
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
-    <tr> 
-        <td><b>Pour qui</b> cherchez vous de l'aide ? </td>
+    <tr class="table-header"> 
+        <td colspan="2"><b>A propos de la personne pour qui est destinée l'aide</b></td>
+    </tr>
+    <tr>
+        <td>relation vis-à-vis de vous </td>
         <td><select id="lien" class="form" name="lien"> 
             <?php
             if ($default['lien'] == 'pour un.e ami.e') {
@@ -109,15 +113,24 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
             ?>
  	    </select> </td>
     </tr> 
+    <tr>
+        <td> Nom de la personne aidée </td> 
+        <td> <input type='text' id='lastNameHelped' name='lastNameHelped' class='form' > </td>
+    </tr>
+    <tr>
+        <td> Prénom de la personne aidée </td> 
+        <td> <input type='text' id='firstNameHelped' name='firstNameHelped' class='form' > </td>
+    </tr>
+
     <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
-        <td> <b>Quel âge</b> à cette personne ? </td> 
-        <td> <?php echo("<input type='number' id='age' name='age' class='form' value='".$default['age']."'>"); ?>  </td>
+        <td> <b>Age</b> de la personne ? </td> 
+        <td> <?php echo("<input type='number' id='ageHelped' name='ageHelped' class='form' value='".$default['ageHelped']."'>"); ?>  </td>
     </tr>
     <!-- Lignes pour l'adresse de la personne : imput -->
     <tr>
-        <td> A quelle <b>adresse</b> habite-elle ? </td> 
-        <td>  </td>
+        <td> Adresse de la personne aidée </td> 
+        <td>  </td> 
     </tr>
         <tr >
             <td class="sub-tr"> Code postal / Ville </td>
@@ -128,7 +141,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
             <td> <?php echo("<input type='text' class='form' id='street' name='street' value='".$default['street']."'>"); ?> </td>
         </tr>
     <tr>
-        <td> A quelle <b>fréquence</b> voulez-vous d'une aide ? </td>
+        <td> Fréquence de l'aide </td>
         <td>
             <select id="frequency" class="form" name="frequency" > 
             <?php 
@@ -141,7 +154,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
         </td>
     </tr>
     <tr>
-        <td> De quels <b>services</b> avez-vous besoin ? </td>
+        <td> Services demandés </td>
         <td id = "checkbox-line"> 
             <?php 
             $checked = "";
@@ -161,35 +174,27 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
             ?>
         </td>
     </tr>
-</table>
+    <tr><td>  </td><td></td></tr>
+    <!-- a propos de la personne faisant la demande remplissant le formulaire -->
+    <tr>
+        <td colspan="2" class="table-header"><b>A propos de vous</b></td>
+    </tr>
+    <tr>
+        <td> Nom </td> 
+        <td> <input type='text' id='lastName' name='lastName' class='form' > </td>
+    </tr>
+    <tr>
+        <td> Prénom </td> 
+        <td> <input type='text' id='firstName' name='firstName' class='form' > </td>
+    </tr>
+    <tr>
+        <td> date de naissance </td> 
+        <td> <input type='date' id='birthdate' name='birthdate' class='form' > </td>
+    </tr>
+    
+    </table>
 <div id="button">
     <input type="submit" name="submit" value="Valider" id="submit"  class="s-common-button s-font-body s-action-button" >
     <input type="reset" name="Reset" value="Annuler" id="reset"  class="s-common-button s-font-body s-action-button" >
 </div>
 </form>
-<div style="margin : 0px auto 30px auto; text-align: center; font-size: 20px; color: rgb(51 ,51, 51); font-weight: 400;">
-<button onclick="remplirQuestionnaire()" style="border-color: 
-                black; background-color :rgba(0, 0, 0, 0.1); border-width :
-                    1px; border-style :solid; border-radius : 3px; width : auto; 
-                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">Remplir le formulaire pour la démonstration</button>
-
-<script>
-function remplirQuestionnaire() {
-    document.getElementById('lien').value="pour un parent";
-    document.getElementById('age').value=89;
-    document.getElementById('city').value="29400 Landivisiau";
-    document.getElementById('street').value="5 avenue du général de Gaulle";
-    document.getElementById('frequency').value='une fois tous les deux jours';
-    document.getElementById('0').checked = false; //achat et livraison de courses
-    document.getElementById('1').checked = true;  //repassage
-    document.getElementById('2').checked = false; //vaisselle
-    document.getElementById('3').checked = false; //jardinage
-    document.getElementById('4').checked = false; //cuisine
-    document.getElementById('5').checked = false; //jeu de société
-    document.getElementById('6').checked = false; //discussion
-    document.getElementById('7').checked = true;  //tâche administrative
-}
-</script>
-</div>
-
-
