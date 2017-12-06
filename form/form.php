@@ -21,7 +21,7 @@ Puis on valide et le site indique s'il y a des aidants disponibles pour le servi
 Puis il demande de créer le compte avec la demande d'aide préremplie
 */
 ?>
-<div class="s-bg-image s-bg-light-text s-bg-overlay s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux_flous.png&quot;);">
+<div class="s-bg-image s-bg-light-text  s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux.jpg&quot;);">
     <div class="s-rva-text sixteen columns">
             <div class="s-title-group  ">
                 <div class="s-subtitle">
@@ -55,7 +55,7 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
                 </div>
                 <div class="s-button-group ib s-component">
                     <a  class="s-common-button s-font-body s-action-button" 
-                        href="index.php?page=form"
+                        href="index.php?page=offre&form=blank"
                         target="_blank" 
                         style="text-transform:uppercase">
                         Nos offres
@@ -154,7 +154,7 @@ input {
     Formulaire
 </h1>
 
-<form method = "post" action='index.php?page=offre'>
+<form method = "post" action='index.php?page=offre&form=filled'>
 <table id="table">
     <!-- Ligne pour le lien avec la personne dépendante : select : pour un parent, pour un ami, pour moi, autre -->
     <tr> 
