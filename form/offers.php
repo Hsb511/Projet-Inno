@@ -43,29 +43,25 @@
 
     if ($_GET['form'] == 'blank') {
         echo("
-        #encadre-principal {
+        #encadre-principal, #encadre-sub-gauche, #encadre-sub-droit, #encadre-sub-milieu {
             width:45%; 
-            min-height:300px; 
+            min-height:38vh; 
+        } 
+        #encadre-principal {
             float:left;
             margin-left:3%; 
             margin-top:12px;
         }
         #encadre-sub-gauche {
-            width:45%; 
-            min-height:300px; 
             float: right;
             margin-right:3%;
         }
         #encadre-sub-milieu {
-            width:45%; 
-            min-height:300px; 
             float:right;
             margin-right:3%;
             margin-top:2%;
         }
         #encadre-sub-droit {
-            width:45%; 
-            min-height:300px; 
             float:left;
             margin-left:3%; 
             margin-top:2%;
@@ -73,14 +69,24 @@
         
     } elseif ($_GET['form'] == 'filled') {
         echo("
+        .titre-encadre-principal {
+            margin:16px;
+            font-size:30px;
+            color:black;
+        }
+        .encadre-text-principal {
+            font-size:23px;
+            color:black; 
+            margin: 0 16px;
+            line-height:20px
+        }
         .encadre-sub {
             width:30%; 
             min-height:300px;
         }
         #encadre-principal {
-            font-size:24px;
             width:80%; 
-            min-height:300px; 
+            min-height:80vh; 
             margin:auto; 
         }
         #encadre-sub-gauche {
@@ -101,14 +107,25 @@
 ?>
 
 <div class= "encadre" id="encadre-principal">
-    <p class= "titre-encadre">
-        <?php if ($_GET['form'] == 'filled') {
-            echo("Voici la formule qui correspond le plus à vos besoin : ");
-        } ?>
+    <?php 
+    if ($_GET['form'] == 'filled') {
+        echo("
+            <p class= 'titre-encadre-principal'>
+            Voici la formule qui correspond le plus à vos besoin : ");
+    } else {
+        echo("<p class = 'titre-encadre'>");
+    }
+    ?>
         <strong><b>Abonnement hebdomadaire</b></strong> 
     </p>
-    <p class = "encadre-text">
-        Vous bénéficiez d'une visite tous les jours
+    <?php 
+    if ($_GET['form'] == 'filled') {
+        echo("<p class= 'encadre-text-principal'>");
+    } else {
+        echo("<p class = 'encadre-text'>");
+    }     
+    ?>
+    Vous bénéficiez d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
     </p>
 </div>
 <br>
@@ -117,7 +134,7 @@
         <strong><b>Abonnement bihebdomadaire</b></strong>
     </p>
     <p class = "encadre-text">
-        Vous pouvez bénéficier d'une visite 2 fois par semaine
+        Vous pouvez bénéficier d'une visite <b>deux fois par semaine</b>. Voici les tarifs pour cet abonnement :
     </p>
 </div>
 <div class = "encadre encadre-sub" id = "encadre-sub-droit" >
@@ -125,7 +142,7 @@
         <strong><b>Abonnement bimensuel</b></strong>
     </p>
     <p class = "encadre-text">
-        Vous pouvez bénéficier d'une visite toutes les deux semaines
+        Vous pouvez bénéficier d'une visite <b>toutes les deux semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
 </div>
 <div class = "encadre encadre-sub" id="encadre-sub-milieu">
@@ -133,7 +150,7 @@
     <strong><b>Abonnement journalier</b></strong>
     </p>
     <p class = "encadre-text">
-    Vous pouvez bénéficier d'une visite tous les jours
+    Vous pouvez bénéficier d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
 </p>
 </div>
 <?php
@@ -141,3 +158,5 @@
 
     }
 ?>
+<br>
+<br>
