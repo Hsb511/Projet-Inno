@@ -107,7 +107,7 @@
             }
             //page d'accueil
             else{
-                $pageToInclude = "./Proxygeia.html";
+                $pageToInclude = "./user/helper/homepage.php";   
                 
             }
         }
