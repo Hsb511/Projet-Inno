@@ -3,7 +3,6 @@
     //page d'affichage des offres ->  des abonnements
 
     $_SESSION["form_answer"] = $_POST; 
-
     echo("<style>
     strong{
         color:rgb(255,111,34);
