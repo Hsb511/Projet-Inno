@@ -3,10 +3,7 @@
     //page d'affichage des offres ->  des abonnements
 
     $_SESSION["form_answer"] = $_POST; 
-    echo("<style>    
-    strong{
-        color:rgb(255,111,34);
-    }
+    echo("<style>  
     .encadre {
         background-color:white;
         border: 4px solid; 
@@ -126,6 +123,18 @@
             width: 250px;
             text-align:center;
         }
+        #encadre-sub-droit strong
+        {
+            color :rgb(0,0,82); 
+        }
+        #encadre-sub-gauche strong
+        {
+            color :rgb(255,64,34); 
+        }
+        #encadre-sub-milieu strong
+        {
+            color :rgb(56,89,156); 
+        }
         ");
         
     } elseif ($_GET['form'] == 'filled') {
@@ -159,16 +168,16 @@
         #encadre-sub-gauche {
             margin-left:2%;
             float:left;
-            border-color :rgb(0, 0, 82); ;
+            border-color :rgb(0, 0, 82); 
         }
         #encadre-sub-milieu {
             margin:auto;
-            border-color :rgb(0, 0, 82); ;
+            border-color :rgb(0, 0, 82); 
         }
         #encadre-sub-droit {
             margin-right:2%;
             float:right;
-            border-color :rgb(0, 0, 82); ;
+            border-color :rgb(0, 0, 82); 
              
         }
         .encadre table
@@ -189,6 +198,10 @@
             font-size :16px;
             width: 250px;
             text-align:center;
+        }
+        .encadre-sub strong
+        {
+            color :rgb(0, 0, 82); 
         }
         ");
     }
