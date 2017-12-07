@@ -132,9 +132,9 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
         <td>
             <select id="frequency" class="form" name="frequency" > 
             <?php 
-                $frequency = ['jour'=>'tous les jours', '1/2 jour'=>'une fois tous les deux jours', '1/2 semaine'=> 'moins de 3 fois par semaine', '1/7 semaine'=> 'une fois par semaine', '1/4 mois'=> 'quelques fois par mois', 'mois'=> 'occasionnelement', 'une seule fois'=> 'une fois seulement'];
+                $frequency = ['10'=>'tous les jours', '20'=>'une fois tous les deux jours', '30'=> 'moins de 3 fois par semaine', '40'=> 'une fois par semaine', '50'=> 'quelques fois par mois', '60'=> 'occasionnelement', '70'=> 'une fois seulement'];
                 foreach($frequency as $id => $freq) {
-                    echo("<option value='".$freq."'>".$freq."</option>"); 
+                    echo("<option value='".$id."'>".$freq."</option>"); 
                 }
             ?> 
             </select>
