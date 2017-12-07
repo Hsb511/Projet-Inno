@@ -179,7 +179,7 @@ function remplirQuestionnaire() {
     document.getElementById('age').value=89;
     document.getElementById('city').value="29400 Landivisiau";
     document.getElementById('street').value="5 avenue du général de Gaulle";
-    document.getElementById('frequency').value=20;
+    document.getElementById('frequency').value=40;
     document.getElementById('0').checked = false; //achat et livraison de courses
     document.getElementById('1').checked = true;  //repassage
     document.getElementById('2').checked = false; //vaisselle
