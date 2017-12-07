@@ -93,7 +93,7 @@
         if (isset($_GET["type"]) && $_GET["type"] == "helped"){
             $menu = [["Tableau de bord","./index.php?zone=user&type=helped&page=homepage",""],
                     ["Demander une aide","./index.php?zone=user&type=helped&page=search-help",""],
-                    ["mes messages","./index.php?zone=user&type=helped&page=notifications",""],
+                    ["Mes messages","./index.php?zone=user&type=helped&page=notifications",""],
                     ["Gérer ma famille","./index.php?zone=user&type=helped&page=manage-operations",""],
                     ["Déconnexion","./index.php?page=connection",""]] ; 
             //affichage suivant la page

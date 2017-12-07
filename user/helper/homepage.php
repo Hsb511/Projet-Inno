@@ -1,18 +1,16 @@
-    <div >
+    <div >       
         <?php
             //affichage des notifications
             $numberOfNotifications = count($_SESSION["users"][ $_SESSION["username"]]["notifications"]);
             if ($numberOfNotifications == 1){
-                echo("<br/><br/>");
-                echo("Vous avez ".$numberOfNotifications." nouvelle demande de tâche à réaliser. <a href='index.php?zone=user&type=helper&page=list-announces'>Voir mes annonces.</a>");
+                echo("<div style='width : 100%; padding:8px; color :white; line-height: 30px; font-size :23px; background-color: rgb(0,0,82); text-align: center;' > Vous avez ".$numberOfNotifications." nouvelle demande de tâche à réaliser. <u><a style ='color:white;' href='index.php?zone=user&type=helper&page=list-announces'>Voir mes annonces</a></u> </div>");
             }
             elseif ($numberOfNotifications > 1){
-                echo("<br/><br/>");
-                echo("Vous avez ".$numberOfNotifications." nouvelles demandes de tâches à réaliser. <a href='index.php?zone=user&type=helper&page=list-announces'>Voir mes annonces.</a>");
+                echo("<div>Vous avez ".$numberOfNotifications." nouvelles demandes de tâches à réaliser. <u><a style ='color:white;' href='index.php?zone=user&type=helper&page=list-announces'>Voir mes annonces</a></u> </div>");
             }
         ?>
-        
         <div class="s-title-group  " style="padding-top :80px; padding-bottom : 80px; color : rgb(255, 111, 34); font-size: 36px; line-height:43.2px;text-align:center;">
+            
             <div class="s-title ">
                 <div class="s-component s-text">
                     <h2 class="">
