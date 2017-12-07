@@ -1,3 +1,8 @@
+<?php
+    //retrait des notifications
+    $_SESSION["users"][$_SESSION["username"]]["notifications"] = array();
+?>
+
 <!--liste les annonces d'aide postée sur le site par l'utilisateur. propose d'en rajouter ou d'en modifier. -->
 <div >
     <div class='s-title-group ' style='padding-top :80px; padding-bottom : 80px; color : rgb(255, 111, 34); font-size: 36px; line-height:43.2px;text-align:center;'>

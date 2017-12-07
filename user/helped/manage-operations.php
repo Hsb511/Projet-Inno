@@ -4,12 +4,19 @@
         //assignation d'un id de tâche
         $newTaskID = count($_SESSION["tasks"])+1;
         
+
         //creation de la tâche
         $_SESSION["tasks"][$newTaskID] = 
         array("comment" => $_POST["comment"], "task_type"=>$_POST["type"], "repeat"=>$_POST["repeat"]);
         
         //ajout de la nouvelle tâche à l'annonce
         array_push($_SESSION["announces"][$_POST["announceID"]]["tasks"], $newTaskID);
+
+        //ajout de la notification pour avertir l'aidant
+        $id=$_SESSION["users"][ $_SESSION["username"] ]["profileID"];
+        print_r("AZERTY".$id);
+        $helperUsername = $_SESSION["profiles"][$id]["helpedBy"][0];
+        array_push($_SESSION["users"][$helperUsername]["notifications"], $_POST["comment"]);
 
     }
 ?>
