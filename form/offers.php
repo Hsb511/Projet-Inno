@@ -3,7 +3,7 @@
     //page d'affichage des offres ->  des abonnements
 
     $_SESSION["form_answer"] = $_POST; 
-    echo("<style>
+    echo("<style>    
     strong{
         color:rgb(255,111,34);
     }
@@ -19,17 +19,9 @@
         color:black;
     }
     #encadre-principal {
-        color:rgb(255,111,34);
+        border-color:rgb(255,111,34);
     }
-    #encadre-sub-gauche {
-        color:rgb(255,64,34);
-    }
-    #encadre-sub-droit {
-        color:rgb(0,0,82);
-    }   
-    #encadre-sub-milieu {
-        color:rgb(56,89,156);
-    } 
+    
     .encadre-text {
         font-size:18px;
         color:black; 
@@ -47,9 +39,25 @@
         margin: 50px 0px 4px 0px; 
         line-height: 21px; 
         font-size :16px;
-        width: 200px;
+        width: 250px;
         text-align:center;
     }
+    
+    .encadre-principal-button {
+        border-color: black; 
+        background-color :rgba(0, 0, 0, 0.1); 
+        border-width : 1px; 
+        border-style :solid; 
+        border-radius : 3px; 
+        padding : 8px 20px 8px 20px; 
+        box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
+        margin: 180px 0px 4px 0px; 
+        line-height: 23px; 
+        font-size :24px;
+        width: auto;
+        text-align:center;
+    }
+    
     ");
 
     if ($_GET['form'] == 'blank') {
@@ -66,21 +74,45 @@
         #encadre-sub-gauche {
             float: right;
             margin-right:3%;
+            border-color:rgb(255,64,34);
         }
         #encadre-sub-milieu {
             float:right;
             margin-right:3%;
             margin-top:2%;
+            border-color:rgb(56,89,156);
         }
         #encadre-sub-droit {
             float:left;
             margin-left:3%; 
             margin-top:2%;
-        }");
-        
-    } elseif ($_GET['form'] == 'filled') {
-        echo("
-        .encadre-button-principal {
+            border-color:rgb(0,0,82);
+        }
+        #encadre-principal table
+        {
+            width : 100%; 
+            margin: 40px auto  0px auto; 
+            font-size : 18px;
+        }
+        #encadre-sub-gauche table
+        {
+            width : 100%; 
+            margin: 40px auto  0px auto; 
+            font-size : 18px;
+        }
+        #encadre-sub-milieu table
+        {
+            width : 100%; 
+            margin: 40px auto  0px auto; 
+            font-size : 18px;
+        }
+        #encadre-sub-droit table
+        {
+            width : 100%; 
+            margin: 40px auto  0px auto; 
+            font-size : 18px;
+        }
+        .encadre-button {
             border-color: black; 
             background-color :rgba(0, 0, 0, 0.1); 
             border-width : 1px; 
@@ -90,9 +122,19 @@
             box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
             margin: 50px 0px 4px 0px; 
             line-height: 21px; 
-            font-size : 24px;
-            width: 300px;
+            font-size :16px;
+            width: 250px;
             text-align:center;
+        }
+        ");
+        
+    } elseif ($_GET['form'] == 'filled') {
+        echo("
+        #encadre-principal table
+        {
+            width : 80%; 
+            margin: 100px auto  0px auto; 
+            font-size : 28px;
         }
         .titre-encadre-principal {
             margin:16px;
@@ -117,15 +159,38 @@
         #encadre-sub-gauche {
             margin-left:2%;
             float:left;
+            border-color :rgb(0, 0, 82); ;
         }
         #encadre-sub-milieu {
             margin:auto;
+            border-color :rgb(0, 0, 82); ;
         }
         #encadre-sub-droit {
             margin-right:2%;
             float:right;
+            border-color :rgb(0, 0, 82); ;
              
-        }");
+        }
+        .encadre table
+        {
+            width : 100%; 
+            margin: 10px auto  0px auto; 
+        }
+        .encadre-button {
+            border-color: black; 
+            background-color :rgba(0, 0, 0, 0.1); 
+            border-width : 1px; 
+            border-style :solid; 
+            border-radius : 3px; 
+            padding : 5px; 
+            box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
+            margin: 20px 0px 4px 0px; 
+            line-height: 21px; 
+            font-size :16px;
+            width: 250px;
+            text-align:center;
+        }
+        ");
     }
     echo("</style>");
 
@@ -156,46 +221,46 @@
 
     <table>
                 <tr>
-                    <td>
+                    <td align='center'>
                         Durée de l'abonnement
                     </td>
-                    <td>
+                    <td align='center'>
                         2 mois
-                    </td>
-                    <td>
+                    </td align='center'>
+                    <td align='center'>
                         6 mois
                     </td>
-                    <td>
+                    <td align='center'>
                         1 an
                     </td>
-                    <td>
-                        après 18 mois
+                    <td align='center'>
+                        Après 18 mois
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td align='center'>
                         Prix mensuel
                     </td>
-                    <td>
+                    <td align='center'>
                         261 €
                     </td>
-                    <td>
+                    <td align='center'>
                         248 €
                     </td>
-                    <td>
+                    <td align='center'>
                         228 €
                     </td>
-                    <td>
+                    <td align='center'>
                         209 €
                     </td>
                 </tr>
             </table>
-        <div style='margin : auto; width : 20%; text-align: center;'>
+        <div style='margin : auto; width : 100%; text-align: center;'>
             <?php 
             if ($_GET['form'] == 'filled') {
-                echo("<input type='submit' name='hebdomadaire' value='choisir et se créer un compte' class='encadre-button-principal'>");
+                echo("<input type='submit' name='hebdomadaire' value='Choisir et se créer un compte' class='encadre-principal-button'>");
             } else {
-                echo("<input type='submit' name='hebdomadaire' value='choisir et se créer un compte' class='encadre-button'>");
+                echo("<input type='submit' name='hebdomadaire' value='Choisir et se créer un compte' class='encadre-button'>");
             }  
            
             ?>
@@ -212,8 +277,44 @@
         Vous pouvez bénéficier d'une visite <b>deux fois par semaine</b>. Voici les tarifs pour cet abonnement :
     </p>
     <form method = "post" action='index.php?page=create-account'>
-        <div style='margin : auto; width : 20%; text-align: center;'>
-            <input type="submit" name="bihebdomadaire" value="choisir et se créer un compte" class="encadre-button">
+        <table>
+            <tr>
+                <td align='center'>
+                    Durée de l'abonnement
+                </td>
+                <td align='center'>
+                    2 mois
+                </td align='center'>
+                <td align='center'>
+                    6 mois
+                </td>
+                <td align='center'>
+                    1 an
+                </td>
+                <td align='center'>
+                    Après 18 mois
+                </td>
+            </tr>
+            <tr>
+                <td align='center'>
+                    Prix mensuel
+                </td>
+                <td align='center'>
+                    763 €
+                </td>
+                <td align='center'>
+                    724 €
+                </td>
+                <td align='center'>
+                    666 €
+                </td>
+                <td align='center'>
+                    619 €
+                </td>
+            </tr>
+        </table>
+        <div style='margin : auto; width : 100%; text-align: center;'>
+            <input type="submit" name="bihebdomadaire" value="Choisir et se créer un compte" class="encadre-button">
         </div>
     </form>
 </div>
@@ -225,8 +326,45 @@
         Vous pouvez bénéficier d'une visite <b>toutes les deux semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
     <form method = "post" action='index.php?page=create-account'>
-        <div style='margin : auto; width : 20%; text-align: center;'>
-            <input type="submit" name="bimensuel" value="choisir et se créer un compte" class="encadre-button">
+        <table>
+            <tr>
+                <td align='center'>
+                    Durée de l'abonnement
+                </td>
+                <td align='center'>
+                    2 mois
+                </td align='center'>
+                <td align='center'>
+                    6 mois
+                </td>
+                <td align='center'>
+                    1 an
+                </td>
+                <td align='center'>
+                    Après 18 mois
+                </td>
+            </tr>
+            <tr>
+                <td align='center'>
+                    Prix mensuel
+                </td>
+                <td align='center'>
+                    180 €
+                </td>
+                <td align='center'>
+                    160 €
+                </td>
+                <td align='center'>
+                    120 €
+                </td>
+                <td align='center'>
+                    111 €
+                </td>
+            </tr>
+        </table>
+        
+        <div style='margin : auto; width : 100%; text-align: center;'>
+            <input type="submit" name="bimensuel" value="Choisir et se créer un compte" class="encadre-button">
         </div>
     </form>
 </div>
@@ -238,8 +376,44 @@
     Vous pouvez bénéficier d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
 </p>
 <form method = "post" action='index.php?page=create-account'>
-    <div style='margin : auto; width : 20%; text-align: center;'>
-        <input type="submit" name="journalier" value="choisir et se créer un compte" class="encadre-button">
+    <table>
+        <tr>
+            <td align='center'>
+                Durée de l'abonnement
+            </td>
+            <td align='center'>
+                2 mois
+            </td align='center'>
+            <td align='center'>
+                6 mois
+            </td>
+            <td align='center'>
+                1 an
+            </td>
+            <td align='center'>
+                Après 18 mois
+            </td>
+        </tr>
+        <tr>
+            <td align='center'>
+                Prix mensuel
+            </td>
+            <td align='center'>
+                1736 €
+            </td>
+            <td align='center'>
+                1644 €
+            </td>
+            <td align='center'>
+                1507 €
+            </td>
+            <td align='center'>
+                1416 €
+            </td>
+        </tr>
+    </table>
+    <div style='margin : auto; width : 100%; text-align: center;'>
+        <input type="submit" name="journalier" value="Choisir et se créer un compte" class="encadre-button">
     </div>
     </form>
 </div>
