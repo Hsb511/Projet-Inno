@@ -162,7 +162,7 @@
         }
         #encadre-principal {
             width:80%; 
-            min-height:80vh; 
+            min-height:60vh; 
             margin:auto; 
         }
         #encadre-sub-gauche {
