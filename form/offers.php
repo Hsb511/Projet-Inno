@@ -160,7 +160,7 @@
     Vous pouvez bénéficier d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
 </p>
 <form method = "post" action='index.php?page=create-account'>
-        <input type="submit" name="journalier" value="choisir">
+        <input type="submit" name="journalière" value="choisir">
     </form>
 </div>
 <?php
