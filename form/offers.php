@@ -36,6 +36,20 @@
         margin: 0 16px;
         line-height:20px
     }
+    .encadre-button {
+        border-color: black; 
+        background-color :rgba(0, 0, 0, 0.1); 
+        border-width : 1px; 
+        border-style :solid; 
+        border-radius : 3px; 
+        padding : 5px; 
+        box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
+        margin: 50px 0px 4px 0px; 
+        line-height: 21px; 
+        font-size :16px;
+        width: 200px;
+        text-align:center;
+    }
     ");
 
     if ($_GET['form'] == 'blank') {
@@ -66,6 +80,20 @@
         
     } elseif ($_GET['form'] == 'filled') {
         echo("
+        .encadre-button-principal {
+            border-color: black; 
+            background-color :rgba(0, 0, 0, 0.1); 
+            border-width : 1px; 
+            border-style :solid; 
+            border-radius : 3px; 
+            padding : 5px; 
+            box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; 
+            margin: 50px 0px 4px 0px; 
+            line-height: 21px; 
+            font-size : 24px;
+            width: 300px;
+            text-align:center;
+        }
         .titre-encadre-principal {
             margin:16px;
             font-size:30px;
@@ -125,11 +153,53 @@
     Vous bénéficiez d'une visite <b>toutes les semaines</b>. Voici les tarifs pour cet abonnement :
     </p>
     <form method = "post" action='index.php?page=create-account'>
+
+    <table>
+                <tr>
+                    <td>
+                        Durée de l'abonnement
+                    </td>
+                    <td>
+                        2 mois
+                    </td>
+                    <td>
+                        6 mois
+                    </td>
+                    <td>
+                        1 an
+                    </td>
+                    <td>
+                        après 18 mois
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Prix mensuel
+                    </td>
+                    <td>
+                        261 €
+                    </td>
+                    <td>
+                        248 €
+                    </td>
+                    <td>
+                        228 €
+                    </td>
+                    <td>
+                        209 €
+                    </td>
+                </tr>
+            </table>
         <div style='margin : auto; width : 20%; text-align: center;'>
-            <input type="submit" name="hebdomadaire" value="choisir" style="border-color: 
-                black; background-color :rgba(0, 0, 0, 0.1); border-width :
-                    1px; border-style :solid; border-radius : 3px; width : 100px; 
-                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+            <?php 
+            if ($_GET['form'] == 'filled') {
+                echo("<input type='submit' name='hebdomadaire' value='choisir et se créer un compte' class='encadre-button-principal'>");
+            } else {
+                echo("<input type='submit' name='hebdomadaire' value='choisir et se créer un compte' class='encadre-button'>");
+            }  
+           
+            ?>
+             
         </div>
     </form>
 </div>
@@ -143,10 +213,7 @@
     </p>
     <form method = "post" action='index.php?page=create-account'>
         <div style='margin : auto; width : 20%; text-align: center;'>
-            <input type="submit" name="bihebdomadaire" value="choisir" style="border-color: 
-                black; background-color :rgba(0, 0, 0, 0.1); border-width :
-                    1px; border-style :solid; border-radius : 3px; width : 100px; 
-                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+            <input type="submit" name="bihebdomadaire" value="choisir et se créer un compte" class="encadre-button">
         </div>
     </form>
 </div>
@@ -159,10 +226,7 @@
     </p>
     <form method = "post" action='index.php?page=create-account'>
         <div style='margin : auto; width : 20%; text-align: center;'>
-            <input type="submit" name="bimensuel" value="choisir" style="border-color: 
-                    black; background-color :rgba(0, 0, 0, 0.1); border-width :
-                        1px; border-style :solid; border-radius : 3px; width : 100px; 
-                        padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+            <input type="submit" name="bimensuel" value="choisir et se créer un compte" class="encadre-button">
         </div>
     </form>
 </div>
@@ -175,10 +239,7 @@
 </p>
 <form method = "post" action='index.php?page=create-account'>
     <div style='margin : auto; width : 20%; text-align: center;'>
-        <input type="submit" name="journalier" value="choisir" style="border-color: 
-                    black; background-color :rgba(0, 0, 0, 0.1); border-width :
-                        1px; border-style :solid; border-radius : 3px; width : 100px; 
-                        padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">
+        <input type="submit" name="journalier" value="choisir et se créer un compte" class="encadre-button">
     </div>
     </form>
 </div>
