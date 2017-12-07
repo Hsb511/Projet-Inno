@@ -16,9 +16,9 @@
     
     //On parcourt les infos et on regarde celle qui sont déjà remplies et correctes 
     foreach($default as $info => $value) {
-        if(!empty($_POST[$info])) {
+        if(!empty($_SESSION["form_answer"][$info])) {
             //On les passe comme valeurs par défaut
-            $default[$info] = $_POST[$info];
+            $default[$info] = $_SESSION["form_answer"][$info];
         }    
     }
 /*
@@ -79,7 +79,6 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
     Créez votre compte dès à présent afin que nous vous recontactions et profiter de nos services !
 </h1>
 <?php
-print_r($_SESSION["form_answer"]);
 ?>
 <form method = "post" action='index.php?page=connection&event=new-account'>
 <table id="table">
@@ -127,7 +126,7 @@ print_r($_SESSION["form_answer"]);
     <!-- Ligne pour l'âge de la personne' : input : type nombre -->
     <tr>
         <td> <b>Age</b> de la personne ? </td> 
-        <td> <?php echo("<input type='number' id='ageHelped' name='ageHelped' class='form' value='".$default['ageHelped']."'>"); ?>  </td>
+        <td> <?php echo("<input type='number' id='ageHelped' name='ageHelped' class='form' value='".$default['age']."'>"); ?>  </td>
     </tr>
     <!-- Lignes pour l'adresse de la personne : imput -->
     <tr>
@@ -143,13 +142,19 @@ print_r($_SESSION["form_answer"]);
             <td> <?php echo("<input type='text' class='form' id='street' name='street' value='".$default['street']."'>"); ?> </td>
         </tr>
     <tr>
-        <td> Fréquence de l'aide </td>
+        <td> Abonnement choisi </td>
         <td>
-            <select id="frequency" class="form" name="frequency" > 
+            <select id="formula" class="form" name="formula" > 
             <?php 
-                $frequency = ['jour'=>'tous les jours', '1/2 jour'=>'une fois tous les deux jours', '1/2 semaine'=> 'moins de 3 fois par semaine', '1/7 semaine'=> 'une fois par semaine', '1/4 mois'=> 'quelques fois par mois', 'mois'=> 'occasionnelement', 'une seule fois'=> 'une fois seulement'];
+                $frequency = ['journalier' => "journalier", 'hebdomadaire'=>'hebdomadaire', 'bihebdomadaire'=>'bihebdomadaire', 'bimensuel' => 'bimensuel'];
                 foreach($frequency as $id => $freq) {
-                    echo("<option value='".$freq."'>".$freq."</option>"); 
+                    echo($freq);
+                    if (isset($_POST[$freq])){
+                        echo("<option value='".$freq."' selected>".$freq." </option>"); 
+                    }
+                    else{
+                        echo("<option value='".$freq."'>".$freq."</option>"); 
+                    }
                 }
             ?> 
             </select>
