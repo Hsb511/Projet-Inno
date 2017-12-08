@@ -166,7 +166,7 @@
             margin:auto; 
         }
         #encadre-sub-gauche {
-            margin-left:2%;
+            margin-left:10%;
             float:left;
             border-color :rgb(0, 0, 82); 
         }
@@ -175,7 +175,7 @@
             border-color :rgb(0, 0, 82); 
         }
         #encadre-sub-droit {
-            margin-right:2%;
+            margin-right:10%;
             float:right;
             border-color :rgb(0, 0, 82); 
              
@@ -333,57 +333,7 @@
 </div>
 <div class = "encadre encadre-sub" id = "encadre-sub-droit" >
     <p class= "titre-encadre">
-        <strong><b>Abonnement bimensuel</b></strong>
-    </p>
-    <p class = "encadre-text">
-        Vous pouvez bénéficier d'une visite <b>toutes les deux semaines</b>. Voici les tarifs pour cet abonnement :
-    </p>
-    <form method = "post" action='index.php?page=create-account'>
-        <table>
-            <tr>
-                <td align='center'>
-                    Durée de l'abonnement
-                </td>
-                <td align='center'>
-                    2 mois
-                </td align='center'>
-                <td align='center'>
-                    6 mois
-                </td>
-                <td align='center'>
-                    1 an
-                </td>
-                <td align='center'>
-                    Après 18 mois
-                </td>
-            </tr>
-            <tr>
-                <td align='center'>
-                    Prix mensuel
-                </td>
-                <td align='center'>
-                    180 €
-                </td>
-                <td align='center'>
-                    160 €
-                </td>
-                <td align='center'>
-                    120 €
-                </td>
-                <td align='center'>
-                    111 €
-                </td>
-            </tr>
-        </table>
-        
-        <div style='margin : auto; width : 100%; text-align: center;'>
-            <input type="submit" name="bimensuel" value="Choisir et se créer un compte" class="encadre-button">
-        </div>
-    </form>
-</div>
-<div class = "encadre encadre-sub" id="encadre-sub-milieu">
-    <p class= "titre-encadre">
-    <strong><b>Abonnement journalier</b></strong>
+        <strong><b>Abonnement journalier</b></strong>
     </p>
     <p class = "encadre-text">
     Vous pouvez bénéficier d'une visite <b>tous les jours</b>. Voici les tarifs pour cet abonnement :
