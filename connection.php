@@ -98,7 +98,7 @@ if (isset($_GET["event"]) && $_GET["event"] == "new-account"){
     <div style="margin : auto; width: 400px; text-align: center; font-size: 20px; color: rgb(51 ,51, 51); font-weight: 400;">
         <p style= "line-height: 29px;">Paulette "PauletteDubois" Dubois <br/></p>
         <p style= "line-height: 29px;">Véronique "Vero45" Duval <br/></p>
-        <p style= "line-height: 29px;">Maxime "max38" Turtille <br/></p>
+        <p style= "line-height: 29px;">Maxime "max38" Petit <br/></p>
         <!-- pour réinitialiser la démonstration-->
         <form action="index.php" method="get">
             <input type="hidden" name="restartDemo" value="true">
