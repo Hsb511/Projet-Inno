@@ -85,27 +85,23 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
         <td><b>Pour qui</b> cherchez vous de l'aide ? </td>
         <td><select id="lien" class="form" name="lien"> 
             <?php
+            $parentSelected = "";
+            $amiSelected = "";
+            $moiSelected = "";
+            $autreSelected = "";
             if ($default['lien'] == 'pour un.e ami.e') {
-                echo("<option value='pour un parent'>pour un parent</option>
-                      <option value='pour un.e ami.e' selected>pour un.e ami.e</option>
-                      <option value='pour moi'>pour moi</option>
-                      <option value='autre'>autre</option>");
+                $amiSelected = "selected";
             } elseif ($default['lien'] == 'pour moi') {
-                echo("<option value='pour un parent'>pour un parent</option>
-                      <option value='pour un.e ami.e'>pour un.e ami.e</option>
-                      <option value='pour moi' selected>pour moi</option>
-                      <option value='autre'>autre</option>");
+                $moiSelected = "selected";
             } elseif ($default['lien'] == 'autre') {
-                echo("<option value='pour un parent'>pour un parent</option>
-                        <option value='pour un.e ami.e'>pour un.e ami.e</option>
-                        <option value='pour moi'>pour moi</option>
-                        <option value='autre' selected>autre</option>");
+                $autreSelected = "selected";
             } else {
-                echo("<option value='pour un parent' selected>pour un parent</option>
-                      <option value='pour un.e ami.e'>pour un.e ami.e</option>
-                      <option value='pour moi'>pour moi</option>
-                      <option value='autre'>autre</option>");
+                $parentSelected = "selected";
             }
+            echo("  <option value='pour un parent' " . $parentSelected .">pour un parent</option>
+                    <option value='pour un.e ami.e' " . $amiSelected .">pour un.e ami.e</option>
+                    <option value='pour moi' ". $moiSelected . ">pour moi</option>
+                    <option value='autre' ". $autreSelected .">autre</option>");
             ?>
  	    </select> </td>
     </tr> 
@@ -167,29 +163,28 @@ Puis il demande de créer le compte avec la demande d'aide préremplie
     <input type="reset" name="Reset" value="Annuler" id="reset"  class="s-common-button s-font-body s-action-button" >
 </div>
 </form>
-<div style="margin : 0px auto 30px auto; text-align: center; font-size: 20px; color: rgb(51 ,51, 51); font-weight: 400;">
-<button onclick="remplirQuestionnaire()" style="border-color: 
-                black; background-color :rgba(0, 0, 0, 0.1); border-width :
-                    1px; border-style :solid; border-radius : 3px; width : auto; 
-                    padding : 5px; box-shadow : rgb(69, 85, 108) 1px 1px 0px 0px; margin: 50px 0px 4px 0px; line-height: 21px; font-size :16px;">Remplir le formulaire pour la démonstration</button>
+<div id="form-button-container">
+    <button onclick="remplirQuestionnaire()" id="remplir-questionnaire">
+        Remplir le formulaire pour la démonstration
+    </button>
 
-<script>
-function remplirQuestionnaire() {
-    document.getElementById('lien').value="pour un parent";
-    document.getElementById('age').value=89;
-    document.getElementById('city').value="29400 Landivisiau";
-    document.getElementById('street').value="5 avenue du général de Gaulle";
-    document.getElementById('frequency').value=40;
-    document.getElementById('0').checked = false; //achat et livraison de courses
-    document.getElementById('1').checked = true;  //repassage
-    document.getElementById('2').checked = false; //vaisselle
-    document.getElementById('3').checked = false; //jardinage
-    document.getElementById('4').checked = false; //cuisine
-    document.getElementById('5').checked = false; //jeu de société
-    document.getElementById('6').checked = false; //discussion
-    document.getElementById('7').checked = true;  //tâche administrative
-}
-</script>
+    <script>
+    function remplirQuestionnaire() {
+        document.getElementById('lien').value="pour un parent";
+        document.getElementById('age').value=89;
+        document.getElementById('city').value="29400 Landivisiau";
+        document.getElementById('street').value="5 avenue du général de Gaulle";
+        document.getElementById('frequency').value=40;
+        document.getElementById('0').checked = false; //achat et livraison de courses
+        document.getElementById('1').checked = true;  //repassage
+        document.getElementById('2').checked = false; //vaisselle
+        document.getElementById('3').checked = false; //jardinage
+        document.getElementById('4').checked = false; //cuisine
+        document.getElementById('5').checked = false; //jeu de société
+        document.getElementById('6').checked = false; //discussion
+        document.getElementById('7').checked = true;  //tâche administrative
+    }
+    </script>
 </div>
 
 
