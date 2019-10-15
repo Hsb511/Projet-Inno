@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/editor.8d35e9c6b8cf8126cee9.bundle.css">
     <link rel="stylesheet" media="screen" href="./Proxygeia_files/main_v4_editor.6cf9cd30433bcfb50ea4.bundle.css">
+    <link rel="stylesheet" type="text/css" href="./Proxygeia_files/stylesheet.css">
 
     <meta name="csrf-param"s-navbar-section content="authenticity_token">
     <meta name="csrf-token" content="bwTgmMX7SuGqhLDjdkTz0v5rd7JSPs+eFQLtVOpCCldmuMF/cJW4BKAEYbTremNnkMAxZXKOJej+hADXc5PS7Q==">
@@ -25,7 +26,7 @@
                 <div class="columns sixteen" >
                     <div class="header-wrapper">
                         <div class="logo-container">
-                            <div class="logo-image" style="float:left; margin-left :8px;">
+                            <div class="logo-image">
                                 <div class="s-component s-image">
                                     <span>
                                         <div class="s-component-content">
@@ -44,36 +45,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="nav-container" style=" font-size:23px;">
-                            <ul style="margin:auto;">
-                                    <li style="margin:12px">
-                                        <a class="s-nav-item" href="#proxygeia">
-                                            <span class="s-font-body">Proxygéia</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin:12px">
-                                        <a class="s-nav-item" href="#fonctionnalites">
-                                            <span class="s-font-body">Nos valeurs</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin:12px">
-                                        <a class="s-nav-item" href="#temoignages">
-                                            <span class="s-font-body">Témoignages</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin:12px">
-                                        <a class="s-nav-item" href="#particulier">
-                                            <span class="s-font-body">Comment s'inscrire ?</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin:12px">
-                                        <a class="s-nav-item" href="#contact">
-                                            <span class="s-font-body">Contactez-nous</span>
-                                        </a>
-                                    </li>
+                        <div class="nav-container">
+                            <ul id="nav-ul">
+                                <li>
+                                    <a class="s-nav-item" href="#proxygeia">
+                                        <span class="s-font-body">Proxygéia</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="s-nav-item" href="#fonctionnalites">
+                                        <span class="s-font-body">Nos valeurs</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="s-nav-item" href="#temoignages">
+                                        <span class="s-font-body">Témoignages</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="s-nav-item" href="#particulier">
+                                        <span class="s-font-body">Comment s'inscrire ?</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="s-nav-item" href="#contact">
+                                        <span class="s-font-body">Contactez-nous</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="s-button-group ib s-component" style="float:right; margin-right:8px">
+                        <div class="s-button-group ib s-component" id="offer-button">
                             <a class="s-common-button s-font-body s-action-button" href="index.php?page=connection">
                                 MON COMPTE
                             </a>
@@ -84,11 +85,9 @@
         </div>
 
 <div class="page-wrapper">
-    <ul class="slides s-page-1" style="opacity: 1;">
+    <ul class="slides s-page-1">
         <!-- Section 1 : présentation proxygeia -->
         <li class="slide s-section-1 s-first-visible-section" id="proxygeia">
-            <div class="waypoint"></div>
-            <a class="section-anchor" style="top: -70px;"></a>
             <div class="section-wrap">
             <div>
             <div class="s-bg-image s-bg-light-text s-bg-overlay s-new-hero-section s-section s-signup-section" style="margin-top:32px; background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;./Proxygeia_files/vieux_flous.png&quot;);">
@@ -242,7 +241,7 @@
                                                     <div class="s-item-media-group">
                                                         <div class="s-component s-media ">
                                                             <span>
-                                                                <div class="s-component-content" style="">
+                                                                <div class="s-component-content">
                                                                     <div class="s-mh-nudge" style="padding-top: 7.5px;">
                                                                         <div class="s-ratio-box" style="max-width: 250px; max-height: 250px;">
                                                                             <div class="s-ratio-fill" style="padding-bottom: 100%;"></div>
@@ -683,36 +682,7 @@
                         data-react-style="{&quot;backgroundRepeat&quot;:&quot;no-repeat&quot;,&quot;backgroundSize&quot;:&quot;cover&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;backgroundPosition&quot;:&quot;50% 50%&quot;}" 
                         style="background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;Proxygeia_files/aide_vieux.jpg&quot;);">
                         <div class="s-component-content needsclick recursive s-font-heading  " style="outline: 0px; font-size:23px"   tabindex="0"   role="textbox" aria-label="false">
-                            <!--
-                            <div style="margin-left:40%; text-align:left; text-shadow: rgb(255,111,34) 1px 1px, rgb(255,111,34) -1px 1px, rgb(255,111,34) -1px -1px, rgb(255,111,34) 1px -1px;">
-                                <p><br></p>
-                                <p><strong>Il faut :
-                                    <ul style:"outline:12px;">
-                                    <li>
-                                        - se créer un compte
-                                    </li>
-                                    <li>
-                                        - renseigner les informations et documents nécessaires 
-                                    </li>
-                                    <li>
-                                        &nbsp; (pièces d'identité et permis de conduire)
-                                    </li>
-                                    <li>
-                                        - trouver la personnes dépendantes que vous voulez aider
-                                    </li>
-                                    <li>
-                                        - effectuer le service
-                                    </li>
-                                    <li>
-                                        - récupérer les sous
-                                    </li>
 
-                                    </ul>
-                                
-                                </strong></p>
-                                <p><br></p>
-                            </div>
-                            -->
                             <div style = "background-color:white; width:25%; min-height:340px; color:rgb(255,111,34); margin-left: 6%; border: 4px solid; border-radius: 15px; float:left">
                                 <p style="text-transform:uppercase; padding:16px; font-weight: bold; font-size:30px; ">étape 1</p>
                                 <div style="color:black; margin-left:8px; margin-right:8px"><p>Remplissez le formulaire et</p><p>choisissez l'offre qui </p><p>correspond à vos besoin</p></div>
